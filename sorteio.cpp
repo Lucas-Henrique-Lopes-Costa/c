@@ -21,15 +21,14 @@
 // alunos de Introdução aos Algoritmos (GAC109, GAC124)
 
 
-#include <string>
-#include <iostream>
-#include <fstream>
-#include <stdexcept>
-#include <cstdlib>
 #include <random>
+#include <string>
+#include <cstdlib>
+#include <fstream>
+#include <iostream>
+#include <stdexcept>
 
 using namespace std;
-
 
 unsigned mdc(unsigned m, unsigned n) {
   while (n != 0) {
@@ -53,7 +52,6 @@ unsigned mdc(unsigned* vetor, unsigned tamanho) {
   }
 }
 
-
 unsigned  mmc(int a, int b) {
     return (a / mdc(a, b)) * b;
 }
@@ -70,7 +68,6 @@ unsigned mmc(unsigned* vetor, unsigned tamanho) {
     return t;
   }
 }
-
 
 double sorteiaValor() {
   return double(rand()) / double(RAND_MAX);
