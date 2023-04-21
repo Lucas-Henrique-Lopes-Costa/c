@@ -6,12 +6,12 @@ using namespace std;
 
 int main()
 {
-  std::cout << "\n";
+  cout << "\n";
 
-  std::cout << "Hello World!\nPrimeiro COdigo" << std::endl;
+  cout << "Hello World!\nPrimeiro Codigo" << endl;
 
   system("pause");
 
-  std::cout << "\n";
-  return 0;
+  cout << "\n";
+  return 1;
 }

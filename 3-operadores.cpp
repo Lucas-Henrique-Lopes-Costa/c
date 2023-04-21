@@ -3,7 +3,8 @@
 
 using namespace std;
 
-int main() {
+int main()
+{
   int a = 5, b = 2;
 
   // int soma = a + b;
@@ -17,6 +18,7 @@ int main() {
   cout << "Multiplicacao: " << mult << endl;
 
   // divisões
+
   int quocdiv = a / b;
   cout << "Quociente: " << quocdiv << endl;
 

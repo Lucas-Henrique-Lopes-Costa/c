@@ -8,25 +8,28 @@ using namespace std;
 #define pi 3.14;
 #define final cout << "Final\n";
 
-void inscrever() {
+void inscrever()
+{
   cout << "Primeira Funcao!!\n";
 }
 
-int somar(int &x, int &y) { 
+int somar(int &x, int &y)
+{
   int soma;
-  soma = x+y;
+  soma = x + y;
   x = 30;
   return soma;
 }
 
-int main() {
+int main()
+{
   setlocale(LC_ALL, "portuguese");
 
   int t;
   t = 0;
 
   inscrever();
-  
+
   int a = 5, b = 4;
   int s;
 
