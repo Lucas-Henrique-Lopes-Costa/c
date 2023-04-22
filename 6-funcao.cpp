@@ -1,5 +1,4 @@
 #include <iostream>
-#include <locale.h>
 
 using namespace std;
 
@@ -23,8 +22,6 @@ int somar(int &x, int &y)
 
 int main()
 {
-  setlocale(LC_ALL, "portuguese");
-
   int t;
   t = 0;
 

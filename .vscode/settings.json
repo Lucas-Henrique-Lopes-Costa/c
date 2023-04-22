@@ -1,0 +1,11 @@
+{
+  "files.associations": {
+    ".sequelizerc": "javascript",
+    ".stylelintrc": "json",
+    "*.tsx": "typescriptreact",
+    ".env.*": "dotenv",
+    ".prettierrc": "json",
+    "ostream": "cpp",
+    "iostream": "cpp"
+  }
+}
