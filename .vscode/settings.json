@@ -8,5 +8,6 @@
     "ostream": "cpp",
     "iostream": "cpp",
     "iomanip": "cpp"
-  }
+  },
+  "C_Cpp.errorSquiggles": "disabled"
 }
