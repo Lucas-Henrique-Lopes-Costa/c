@@ -5,6 +5,10 @@ using namespace std;
 
 int main()
 {
+  // definindo precisão do código
+  cout.precision(10);
+  cout.setf(ios::fixed);
+
   int a = 5, b = 2;
 
   // int soma = a + b;
