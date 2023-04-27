@@ -14,11 +14,11 @@ int main()
   arquivoIn >> n >> k >> ak >> r;
   arquivoIn.close();
 
-  float pg = ak * pow(r, (n - k));
+  float an = ak * pow(r, (n - k));
 
   ofstream arquivoOut;
   arquivoOut.open("saida.txt");
-  arquivoOut << pg<< endl;
+  arquivoOut << an<< endl;
 
   return 0;
 }

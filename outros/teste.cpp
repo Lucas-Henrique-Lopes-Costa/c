@@ -1,17 +1,18 @@
 #include <iostream>
-
 using namespace std;
 
 int main()
 {
-  system("clear||cls");
+  int A, B, C;
+  cin >> A >> B >> C;
 
-  int x = 61;
-  float y = x % 7;
-
-  float div = x / y;
-
-  cout << div << endl;
+  if ((A > B) and (B > C))
+    cout << C << endl;
+  if ((A > C) and (C > B))
+    cout << B << endl;
+  cout << B << endl;
+  if ((C > B) and (B > A))
+    cout << A << endl;
 
   return 0;
 }
