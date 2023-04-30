@@ -26,7 +26,7 @@ int main()
 
     Para obter o tempo em minutos, o programa usa o operador % (resto da divisão) para obter o tempo que sobrou após a conversão para horas, e então divide esse tempo em segundos por 60 (para obter o tempo em minutos).
 
-    Por fim, para obter o tempo em segundos, o programa usa novamente o operador % para obter o tempo que sobrou após a conversão para minutos, e então divide esse tempo em milissegundos por 1000 (para obter o tempo em segundos em formato de ponto flutuante).
+    Por fim, para obter o tempo em segundos, o programa usa novamente o operador % para obter o tempo que sobrou após a conversão para minutos, e então divide esse tempo em milissegundos por 1000.0 (para obter o tempo em segundos em formato de ponto flutuante).
   */
 
   ofstream arquivoOut("horario.txt");
