@@ -1,18 +1,13 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 int main()
 {
-  int A, B, C;
-  cin >> A >> B >> C;
-
-  if ((A > B) and (B > C))
-    cout << C << endl;
-  if ((A > C) and (C > B))
-    cout << B << endl;
-  cout << B << endl;
-  if ((C > B) and (B > A))
-    cout << A << endl;
-
+  int valor1 = 20, valor2 = 10, valor3 = 5;
+  if (valor1 and valor2 and (valor3 == 5))
+    cout << valor3 << endl;
+  else
+    cout << valor2 + valor1 << endl;
   return 0;
 }
