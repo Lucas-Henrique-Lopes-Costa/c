@@ -17,7 +17,7 @@ int main()
   int bala = (valorGasto - chocolate * 13.50 - trufa * 2.5 - jujuba * 1.50 - drops * 1.00) / 0.25;
 
   ofstream arquivoOut("doces.txt");
-  arquivoOut << fixed << setprecision(2) << valorGasto << endl;
+  arquivoOut << fixed << setprecision(2) << chocolate * 13.50 + trufa * 2.5 + jujuba * 1.50 + drops * 1.00 + bala * 0.25 << endl;
   arquivoOut << chocolate << endl;
   arquivoOut << trufa << endl;
   arquivoOut << jujuba << endl;
