@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 
 using namespace std;
 
@@ -17,7 +18,7 @@ int main()
 
     cout << fixed << setprecision(2) << "R$ " << custoAluguel << endl;
 
-    cout << "Carros a disposicao: " << "Fiat Uno 1.0, Fiat Mobi 1.0, Renault Kwid 1.0, VW Gol 1.0, Ford Ka 1.0, Renault Sandero 1.0, Onix Joy 1.0";
+    cout << "Carros a disposição: " << "Fiat Uno 1.0, Fiat Mobi 1.0, Renault Kwid 1.0, VW Gol 1.0, Ford Ka 1.0, Renault Sandero 1.0, Onix Joy 1.0";
   }
   else if (escolha == "INTERMEDIARIO")
   {
@@ -25,7 +26,7 @@ int main()
 
     cout << fixed << setprecision(2) << "R$ " << custoAluguel << endl;
 
-    cout << "Carros a disposicao: " << "HB20 1.6, VW Gol 1.6, Renault Sandero 1.0, Fiat Cronos 1.3, Onix 1.0 Turbo, Nissan Versa FAST";
+    cout << "Carros a disposição: " << "HB20 1.6, VW Gol 1.6, Renault Sandero 1.0, Fiat Cronos 1.3, Onix 1.0 Turbo, Nissan Versa FAST";
   }
   else if (escolha == "PRIME")
   {
@@ -33,7 +34,7 @@ int main()
 
     cout << fixed << setprecision(2) << "R$ " << custoAluguel << endl;
 
-    cout << "Carros a disposicao: " << "Ford Ecoesport 1.5, Renault Duster 1.6, Nissan Kicks 1.6, VW Nivus 1.6, Fiat Pulse 1.6, Chery Tiggo 3X Turbo";
+    cout << "Carros a disposição: " << "Ford Ecoesport 1.5, Renault Duster 1.6, Nissan Kicks 1.6, VW Nivus 1.6, Fiat Pulse 1.6, Chery Tiggo 3X Turbo";
   }
   else
   {
@@ -42,7 +43,7 @@ int main()
 
     cout << fixed << setprecision(2) << "R$ " << custoAluguel << endl;
 
-    cout << "Carros a disposicao: " << "Jeep Compass 4x4 Diesel, Mitsubishi Pajero 2.4 Diesel, Mercedes C180, Toyota Corola Cross, VW Taos Highline, Mitsubishi Eclipse Cross";
+    cout << "Carros a disposição: " << "Jeep Compass 4x4 Diesel, Mitsubishi Pajero 2.4 Diesel, Mercedes C180, Toyota Corola Cross, VW Taos Highline, Mitsubishi Eclipse Cross";
   }
 
   return 0;
