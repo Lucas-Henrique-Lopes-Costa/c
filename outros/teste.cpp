@@ -1,17 +1,9 @@
 #include <iostream>
-#include <cmath>
 using namespace std;
 
 int main()
 {
-  int x = 0, y = 5;
+  int valor, contato1 = 0, contador2 = 1;
+  bool contador3 = true
 
-  do {
-    x++;
-    y++;
-    y = y - x;
-  }
-  while (x < 4 and y > 5);
-
-  cout << x + y << endl;
 }

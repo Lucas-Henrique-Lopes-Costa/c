@@ -10,10 +10,10 @@ int main() {
   
   cin >> num;
 
-  while (cont < num)
+  while (cont < num) // para ser decrescente, coloca invertido
   {
     cin >> valor;
-    cont++;
+    cont++; // e aqui --
     soma += valor;
   }
   
