@@ -1,0 +1,4 @@
+avião: airplane
+coração: heart
+macaco: monkey
+pipoca: popcorn
