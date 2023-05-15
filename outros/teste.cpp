@@ -1,26 +1,16 @@
 #include <iostream>
 #include <fstream>
+#include <iomanip>
+#include <string>
+#include <cmath>
 
 using namespace std;
 
 int main()
 {
-  int cont = 0, soma = 0, dados, n;
-
-  ifstream arquivoIn("entrada.txt");
-
-  ofstream arquivoOut("saida.txt");
-
-  if (arquivoIn)
-  {
-    while (arquivoIn >> dados) // será repetido enquanto for possível ter um valor
-    {
-      cout << dados << " ";
-      soma += dados;
-    }
-    arquivoIn.close();
-  }
-  cout << soma << endl;
+  int capacidade;
+  cin >> capacidade;
+  string palavras [capacidade];
 
   return 0;
 }
