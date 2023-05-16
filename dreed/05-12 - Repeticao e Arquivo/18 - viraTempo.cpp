@@ -15,7 +15,7 @@ int main()
   {
     int tempo = hora - voltas;
 
-    if (tempo < H)
+    if (tempo <= H)
       total++;
   }
 
