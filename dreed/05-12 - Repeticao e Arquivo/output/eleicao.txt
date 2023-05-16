@@ -1,0 +1,5 @@
+ehNois usMano
+restaurante 20 25
+pavilhao 40 0
+departamento 50 50
+portaria 10 5
