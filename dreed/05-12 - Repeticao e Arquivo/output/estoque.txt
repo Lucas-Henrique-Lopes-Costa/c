@@ -1,0 +1,6 @@
+5
+Mouse 500 410
+Teclado 820 780
+Fonte 225 129
+Webcan 300 217
+Camera 1024 1002
