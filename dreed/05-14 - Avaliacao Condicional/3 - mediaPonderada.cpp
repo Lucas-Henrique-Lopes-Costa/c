@@ -24,29 +24,29 @@ int main()
     Entradas:
 
     Três números em ponto flutuante que denotam as três notas obtidas pelo aluno. As notas são fornecidas de acordo com a seguinte ordem: nota do trabalho de laboratório, nota da avaliação semestral e, por último, nota do exame final. Cada dado de entrada será fornecido em uma linha diferente.
-    
+
     Saídas:
 
     Número em ponto flutuante que indica a média ponderada das notas passadas como entrada.
     Caractere que indica o conceito obtido pelo aluno na disciplina.
-    
+
     Exemplo de entrada:
 
     7.5
     5.0
     6.1
-    
+
     Exemplo de saída:
 
     6.05
     C
-    
+
     Exemplo de Entrada:
 
     8.0
     6.5
     8.9
-    
+
     Exemplo de Saída:
 
     8.0

@@ -16,8 +16,8 @@ int main()
     Os quatro números inteiros informados exibidos em ordem crescente.
     Exemplo de entrada:
 
-    3 
-    6 
+    3
+    6
     9
     4
     Exemplo de saída:

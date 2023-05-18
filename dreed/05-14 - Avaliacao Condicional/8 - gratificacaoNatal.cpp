@@ -36,8 +36,8 @@ int main()
   float H, horasExtras, horasFaltas;
   cin >> horasExtras >> horasFaltas;
 
-  H = (horasExtras * 60) - (2.0/3.0 * (horasFaltas * 60));
-  
+  H = (horasExtras * 60) - (2.0 / 3.0 * (horasFaltas * 60));
+
   if (H > 2400)
     cout << 500 << endl;
   else if (H >= 1800 && H <= 2400)

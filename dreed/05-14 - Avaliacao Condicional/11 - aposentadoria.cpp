@@ -36,12 +36,45 @@ int main()
     65
   */
 
-  int genero, idade, tempoTrabalhado;
+  int genero, idade;
   float tempoTrabalhado;
-  
+
   cin >> genero >> idade >> tempoTrabalhado;
-  
-  
+
+  if (genero == 0)
+  {
+    if (tempoTrabalhado > 15)
+    {
+      if (tempoTrabalhado < 30)
+      {
+        cout << ((30 - tempoTrabalhado) * 1.3) + idade << endl;
+      }
+      else {
+        cout << idade << endl;
+      }
+    }
+    else
+    {
+      cout << 62 << endl;
+    }
+  }
+  else
+  {
+    if (tempoTrabalhado > 20)
+    {
+      if (tempoTrabalhado < 35)
+      {
+        cout << ((35 - tempoTrabalhado) * 1.3) + idade << endl;
+      }
+      else {
+        cout << idade << endl;
+      }
+    }
+    else
+    {
+      cout << 65 << endl;
+    }
+  }
 
   return 0;
 }

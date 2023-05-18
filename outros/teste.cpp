@@ -6,53 +6,55 @@ using namespace std;
 int main()
 {
 
-  ofstream saida("jogo.txt");
+  string nome_arquivo_entrada, nome_arquivo_saida;
+  int numero, menor1, menor2, soma = 0, divisores = 0;
+  bool primo = false;
 
-  int Tamanho;
-  cin >> Tamanho;
-  int contAux;
-  contAux = Tamanho;
+  cin >> nome_arquivo_entrada;
 
-  while (contAux > 0)
+  ifstream arq1(nome_arquivo_entrada);
+
+  arq1 >> menor1;
+  menor2 = menor1 + 1;
+  soma += menor1 + menor2;
+
+  
+
+  while (arq1 >> numero and !primo)
   {
-    // Escreve A linha Impar
-    if (contAux % 2 != 0)
+
+    if (numero < menor1)
     {
-      for (int i = 0; i < Tamanho; i++)
-
-      {
-        if (i % 2 == 0)
-        {
-          saida << ".";
-        }
-        else
-        {
-          saida << "#";
-        }
-      }
-
-      saida << endl;
+      menor2 = menor1;
+      menor1 = numero;
     }
 
-    // Escreve a Linha par
-    if (contAux % 2 == 0)
+    else if (numero < menor2)
+      menor2 = numero;
+
+    soma += numero;
+
+    divisores = 0;
+    
+    for (int i = 2; i < numero; i++)
     {
-      for (int i = 0; i < Tamanho; i++)
+      if (numero % i == 0)
       {
-        if (i % 2 == 0)
-        {
-          saida << "#";
-        }
-        else
-        {
-          saida << ".";
-        }
+        divisores++;
       }
-      saida << endl;
     }
 
-    contAux--;
+    if (divisores == 0)
+    {
+      primo = true;
+      arq1 >> nome_arquivo_saida;
+    }
+
   }
+
+  ofstream arq2(nome_arquivo_saida);
+  
+  arq2 << menor1 << " " << menor2 << " " << soma - menor1 - menor2;
 
   return 0;
 }
