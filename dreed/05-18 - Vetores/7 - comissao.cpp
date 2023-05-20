@@ -43,7 +43,42 @@ int main()
     Matheus 68
   */
 
- 
+  string nomes[10];
+  int vendas[10];
+  float comissao[10], total[10];
+  float totalVendas = 0;
+
+  for (int i = 0; i < 10; i++)
+  {
+    cin >> nomes[i] >> vendas[i] >> comissao[i];
+    total[i] = vendas[i] * comissao[i];
+    totalVendas += vendas[i];
+  }
+
+  for (int i = 0; i < 10; i++)
+  {
+    cout << nomes[i] << " " << total[i] << endl;
+  }
+
+  cout << endl << totalVendas << endl;
+
+  float maior = 0;
+
+  for (int i = 0; i < 10; i++)
+  {
+    if (total[i] > maior)
+    {
+      maior = total[i];
+    }
+  }
+
+  for (int i = 0; i < 10; i++)
+  {
+    if ((maior - total[i]) < 0.0001 )
+    {
+      cout << nomes[i] << " " << total[i] << endl;
+    }
+  }
 
   return 0;
 }
