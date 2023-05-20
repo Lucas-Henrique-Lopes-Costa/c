@@ -1,6 +1,4 @@
 #include <iostream>
-#include <vector>
-
 using namespace std;
 
 int main()
@@ -43,14 +41,30 @@ int main()
   int n;
   cin >> n;
 
-  vector<int> v(n);
+  int vetorNums[n];
 
   for (int i = 0; i < n; i++)
-    cin >> v[i];
+  {
+    cin >> vetorNums[i];
+  }
 
-  int i = 0, j = n - 1;
+  int i = 0;
 
-  
+  while (i < n / 2)
+  {
+    cout << i << " " << vetorNums[i] << " " << n - i - 1 << " " << vetorNums[n - i - 1] << " ";
+    if (vetorNums[i] != vetorNums[n - i - 1] or vetorNums[i] <= 0 or vetorNums[n - i - 1] <= 0)
+    {
+      cout << "nao" << endl;
+      return 0;
+    }
+
+    i++;
+  }
+
+  cout << endl;
+
+  cout << "sim" << endl;
 
   return 0;
 }
