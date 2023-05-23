@@ -33,7 +33,7 @@ int main()
   cin >> n;
 
   // criando o vetor
-  int vetorN[n];
+  float vetorN[n];
   for (int i = 0; i < n; i++)
   {
     cin >> vetorN[i];
@@ -44,7 +44,7 @@ int main()
   cin >> m;
 
   // criando a sequência
-  int vetorM[m];
+  float vetorM[m];
   for (int i = 0; i < m; i++)
   {
     cin >> vetorM[i];
