@@ -1,11 +1,10 @@
 #include <iostream>
-#include <vector>
 
 using namespace std;
 
 int main()
 {
-  int vetor[15], i = 0, multiplo = 0, aux;
+  int vetor[15], i = 0, aux;
   bool teste = true;
 
   while (teste)
@@ -22,6 +21,8 @@ int main()
     i++;
   }
 
+  int  multiplo = 0;
+
   for (int i = 14; i >= 2; i--)
   {
     if (vetor[i] % vetor[0] == 0 and vetor[i] != 0)
@@ -30,9 +31,11 @@ int main()
       multiplo++;
     }
   }
+
   if (multiplo == 0)
   {
     cout << -1;
   }
+
   return 0;
 }

@@ -1,6 +1,4 @@
 #include <iostream>
-#include <vector>
-#include <iomanip>
 
 using namespace std;
 
@@ -17,6 +15,7 @@ int main()
     cin >> matricula;
     vetor[i] = matricula;
   }
+
   for (int i = 0; i < total; i++)
   {
     for (int j = i + 1; j < total; j++)
@@ -36,6 +35,6 @@ int main()
     }
   }
   cout << alunos;
-  
+
   return 0;
 }
