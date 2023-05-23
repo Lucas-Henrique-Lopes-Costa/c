@@ -72,18 +72,34 @@ int main()
 
     if (frequencia == frequenciaModa)
     {
+      // cout << vetor[i] << endl;
       vetorModas[quantidadeModas] = vetor[i];
       quantidadeModas++;
     }
   }
 
-  quantidadeModas /= frequenciaModa;
-
   // Escrever no arquivo de saída
   ofstream saida("saida.txt");
 
-  saida << quantidadeModas << endl;
+  int frequenciaModaReal = quantidadeModas / frequenciaModa;
 
+  saida << frequenciaModaReal << endl;
+
+  // Tirar os elementos repetidos do vetor de modas
+  for (int i = 0; i < quantidadeModas; i++)
+  {
+    for (int j = i + 1; j < quantidadeModas; j++)
+    {
+      if (vetorModas[i] == vetorModas[j])
+      {
+        vetorModas[j] = vetorModas[quantidadeModas - 1];
+        quantidadeModas--;
+        j--;
+      }
+    }
+  }
+
+  // Escrever as modas no arquivo de saída
   for (int i = 0; i < quantidadeModas; i++)
   {
     saida << vetorModas[i] << " ";

@@ -35,7 +35,7 @@ int main()
 
   for (int i = 0; i < 10; i++)
   {
-    if (vetor[i] > 0)
+    if (vetor[i] >= 0)
     {
       quantidadePositivos++;
     }
