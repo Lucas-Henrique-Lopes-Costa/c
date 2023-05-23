@@ -37,8 +37,8 @@ int main()
           palavras[indicePalavra][indiceLetra] == 'u')
       {
         totalVogais++;
-        indicePalavra++;
       }
+      indicePalavra++;
     }
 
     if (totalVogais >= 3)

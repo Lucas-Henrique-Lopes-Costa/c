@@ -5,34 +5,27 @@ using namespace std;
 
 int main()
 {
-  int vetor[15], i = 0, multiplo = 0, aux;
-  bool teste = true;
-
-  while (teste)
+  int matriz[5][5], i, j;
+  for (i = 0; i < 5; i++)
   {
-    cin >> aux;
-    if (aux < 0)
+    for (j = 0; j < 5; j++)
     {
-      teste = false;
+      cin >> matriz[i][j];
     }
-    else if (aux >= 0)
-    {
-      vetor[i] = aux;
-    }
-    i++;
   }
 
-  for (int i = 14; i >= 2; i--)
+  int resultado1, resultado2;
+  resultado1 = resultado2 = 0;
+  for (int i = 0; i < 5; i++)
   {
-    if (vetor[i] % vetor[0] == 0 and vetor[i] != 0)
+    for (int j = 5 - 1; j >= 0; j--)
     {
-      cout << vetor[i] << " " << endl;
-      multiplo++;
+      resultado1 += matriz[i][i];
+      if (i + j == 5 - 1)
+        resultado2 += matriz[i][j];
     }
   }
-  if (multiplo == 0)
-  {
-    cout << -1;
-  }
+  cout << resultado1 << " " << resultado2;
+
   return 0;
 }
