@@ -1,64 +1,48 @@
 #include <iostream>
+
 using namespace std;
 
 int main()
 {
-  /*
-    Faça um programa que lê dois vetores de números reais, preencha-os e escreva a interseção entre eles. Suponha que não existe repetição de elementos num mesmo vetor.
 
-    Caso não haja elementos na interseção, escreva -1.
+  int A, B;
+  cin >> A;
+  cin >> B;
 
-    Entradas (em ordem):
+  float vetA[A];
+  float vetB[B];
 
-    A quantidade de elementos do primeiro vetor,
-    a quantidade de elementos do segundo vetor,
-    os elementos do primeiro vetor (números reais, na mesma linha),
-    os elementos do segundo vetor (números reais, na mesma linha).
-    Saídas:
-
-    Os elementos que estão nos dois vetores, na ordem em que eles aparecem no primeiro vetor.
-    Exemplo de entrada:
-
-    5
-    3
-    4 2 9 8 6
-    2 5 0
-    Exemplo de saída:
-
-    2
-  */
-
-  int n1, n2;
-
-  cin >> n1 >> n2;
-
-  int v1[n1], v2[n2];
-
-  for (int i = 0; i < n1; i++)
+  for (int i = 0; i < A; i++)
   {
-    cin >> v1[i];
+    cin >> vetA[i];
   }
 
-  for (int i = 0; i < n2; i++)
+  int cont = 0, contAux = 0;
+  for (int i = 0; i < B; i++)
   {
-    cin >> v2[i];
+    cin >> vetB[i];
   }
 
-  bool encontrou = false;
-
-  for (int i = 0; i < n1; i++)
+  for (int i = 0; i < A; i++)
   {
-    for (int j = 0; j < n2; j++)
+    cont = 0;
+
+    for (int j = 0; j < B; j++)
     {
-      if (v1[i] == v2[j])
+      if (vetA[i] == vetB[j])
       {
-        cout << v1[i] << endl;
-        encontrou = true;
+        cont++;
       }
+    }
+    
+    if (cont > 0)
+    {
+      cout << vetA[i] << " ";
+      contAux++;
     }
   }
 
-  if (!encontrou)
+  if (contAux == 0)
   {
     cout << -1 << endl;
   }

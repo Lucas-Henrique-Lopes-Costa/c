@@ -19,19 +19,59 @@ int main()
     1 2 3 4 5 6 7 8 9 10
   */
 
-  int v1[5], v2[5], v3[10];
+  int tamanhoA = 5, tamanhoB = 5, tamanhoC;
 
-  for (int i = 0; i < 5; i++)
+  // Lendo o vetor A
+  int vetorA[tamanhoA];
+  for (int i = 0; i < tamanhoA; i++)
   {
-    cin >> v1[i];
+    cin >> vetorA[i];
   }
 
-  for (int i = 0; i < 5; i++)
+  // Ler o vetor B
+  int vetorB[tamanhoB];
+  for (int i = 0; i < tamanhoB; i++)
   {
-    cin >> v2[i];
+    cin >> vetorB[i];
   }
 
-  
+  // Tamanho máximo do vetor C
+  tamanhoC = tamanhoA + tamanhoB;
+  int vetorC[tamanhoC];
+
+  // Inicializando o vetor C com os valores do vetor A
+  for (int i = 0; i < tamanhoA; i++)
+  {
+    vetorC[i] = vetorA[i];
+  }
+
+  // Inicializando o vetor C com os valores do vetor B
+  for (int i = 0; i < tamanhoB; i++)
+  {
+    vetorC[tamanhoA + i] = vetorB[i];
+  }
+
+  // ordernando o vetor C
+  for (int i = 0; i < tamanhoC; i++)
+  {
+    for (int j = i + 1; j < tamanhoC; j++)
+    {
+      if (vetorC[i] > vetorC[j])
+      {
+        int aux = vetorC[i];
+        vetorC[i] = vetorC[j];
+        vetorC[j] = aux;
+      }
+    }
+  }
+
+  // imprimindo o vetor C
+  for (int i = 0; i < tamanhoC; i++)
+  {
+    cout << vetorC[i] << " ";
+  }
+
+  cout << endl;
 
   return 0;
 }

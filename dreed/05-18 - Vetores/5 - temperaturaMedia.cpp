@@ -31,25 +31,17 @@ int main()
     cin >> vetorTemperatura[i];
   }
 
-  // Processamento -> Menor Valor
-  double menorTemperatura = vetorTemperatura[0];
+  double maiorTemperatura = vetorTemperatura[0], menorTemperatura = vetorTemperatura[0];
 
-  for (int i = 0; i < 10; i++)
+  for (int i = 1; i < 12; i++)
   {
-    if (menorTemperatura > vetorTemperatura[i])
-    {
-      menorTemperatura = vetorTemperatura[i];
-    }
-  }
-
-  // Processamento -> Maior Valor
-  double maiorTemperatura = menorTemperatura;
-
-  for (int i = 0; i < 10; i++)
-  {
-    if (maiorTemperatura < vetorTemperatura[i])
+    if (vetorTemperatura[i] > maiorTemperatura)
     {
       maiorTemperatura = vetorTemperatura[i];
+    }
+    if (vetorTemperatura[i] < menorTemperatura)
+    {
+      menorTemperatura = vetorTemperatura[i];
     }
   }
 
@@ -60,7 +52,7 @@ int main()
 
   for (int i = 0; i < 12; i++)
   {
-    if ((vetorTemperatura[i] - menorTemperatura) < 0.000001)
+    if ((vetorTemperatura[i] - menorTemperatura) < 0.001)
     {
       indexMenorTemperatura = i;
     }
@@ -68,7 +60,7 @@ int main()
 
   for (int i = 0; i < 12; i++)
   {
-    if ((maiorTemperatura - vetorTemperatura[i]) < 0.000001)
+    if ((maiorTemperatura - vetorTemperatura[i]) < 0.001)
     {
       indexMaiorTemperatura = i;
     }

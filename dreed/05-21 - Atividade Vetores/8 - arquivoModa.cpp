@@ -34,45 +34,45 @@ int main()
 
   // Calcular a moda
   int frequenciaModa = 0;
+  int maiorNumeroDeModas = 1;
 
   for (int i = 0; i < tamanho; i++)
   {
-    int frequencia = 0;
+    frequenciaModa = 1;
 
     // Compara o valor da posição i com todos os outros valores do vetor
-    for (int j = 0; j < tamanho; j++)
+    for (int j = i + 1; j < tamanho; j++)
     {
       if (vetor[i] == vetor[j])
       {
-        frequencia++;
+        frequenciaModa++;
       }
-    }
 
-    if (frequencia > frequenciaModa)
-    {
-      frequenciaModa = frequencia;
+      if (frequenciaModa > maiorNumeroDeModas)
+      {
+        maiorNumeroDeModas = frequenciaModa;
+      }
     }
   }
 
   // Encontrar quantos elementos tem a mesma frequência da moda e quais são eles
   int quantidadeModas = 0;
-  int vetorModas[tamanho];
+  int vetorModas[tamanho] = {0};
 
   for (int i = 0; i < tamanho; i++)
   {
-    int frequencia = 0;
+    frequenciaModa = 1;
 
-    for (int j = 0; j < tamanho; j++)
+    for (int j = i+1; j < tamanho; j++)
     {
       if (vetor[i] == vetor[j])
       {
-        frequencia++;
+        frequenciaModa++;
       }
     }
 
-    if (frequencia == frequenciaModa)
+    if (frequenciaModa == maiorNumeroDeModas)
     {
-      // cout << vetor[i] << endl;
       vetorModas[quantidadeModas] = vetor[i];
       quantidadeModas++;
     }
