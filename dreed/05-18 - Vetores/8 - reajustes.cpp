@@ -90,13 +90,27 @@ int main()
     }
   }
 
-  cout << "SEM REAJUSTE:" << endl;
-  for (int i = 0; i < contSemReajuste; i++)
+  // não imprimindo o SEM REAJUSTE se todos receberem reajuste
+  if (contSemReajuste > 0)
   {
-    cout << semReajuste[i] << endl;
+    cout << "SEM REAJUSTE:" << endl;
+    for (int i = 0; i < contSemReajuste; i++)
+    {
+      cout << semReajuste[i] << endl;
+    }
+
+    // se tiver reajuste e sem reajuste, pula uma linha
+    if (contReajuste > 0)
+    {
+      cout << endl;
+    }
   }
 
-  cout << endl;
+  // Caso todos os funcionários não recebam aumento, esta parte da saída não deverá exibir nenhuma informação.
+  if (contReajuste == 0)
+  {
+    return 0;
+  }
 
   cout << "COM REAJUSTE:" << endl;
   for (int i = 0; i < contReajuste; i++)
