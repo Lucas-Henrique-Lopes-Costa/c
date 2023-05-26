@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 int main()
@@ -38,33 +39,65 @@ int main()
     nao
   */
 
+  // pegando os dados para o vetor
   int n;
   cin >> n;
 
-  int vetorNums[n];
+  int vetor[n];
 
-  for (int i = 0; i < n; i++)
-  {
-    cin >> vetorNums[i];
-  }
-
+  // pegando só valores positivos
   int i = 0;
-
-  while (i < n / 2)
+  while (i < n)
   {
-    cout << i << " " << vetorNums[i] << " " << n - i - 1 << " " << vetorNums[n - i - 1] << " ";
-    if (vetorNums[i] != vetorNums[n - i - 1] or vetorNums[i] <= 0 or vetorNums[n - i - 1] <= 0)
-    {
-      cout << "nao" << endl;
-      return 0;
-    }
+    cin >> vetor[i];
 
+    if (vetor[i] < 0)
+    {
+    cin >> vetor[i];
+    }
     i++;
   }
 
-  cout << endl;
+  // verificando se é capicua
+  bool capicua = true;
+  int cont = 0;
 
-  cout << "sim" << endl;
+  for (int i = 0; i < n / 2 and capicua; i++)
+  {
+    // se forem diferentes, não é capicua
+    if (vetor[i] != vetor[n - i - 1])
+    {
+      capicua = false;
+    }
+    else
+    {
+      // comparando as posições simétricas
+      cout << i << " " << vetor[i] << " " << n - i - 1 << " " << vetor[n - i - 1] << " ";
+      cont++;
+    }
+  }
+
+  // imprimindo o resultado
+  if (capicua)
+  {
+    // imprimindo o valor caso seja apenas 1
+    if (n == 1 or n == 0)
+    {
+      cout << "0 " << vetor[0] << " 0 " << vetor[0] << " ";
+    }
+
+    cout << endl;
+    cout << "sim" << endl;
+  }
+  else
+  {
+    if (cont > 0)
+    {
+      cout << endl;
+    }
+
+    cout << "nao" << endl;
+  }
 
   return 0;
 }
