@@ -3,33 +3,84 @@ using namespace std;
 
 int main()
 {
+  /*
+    Faça um programa que receba dois vetores, sendo que o segundo deverá ter o dobro do tamanho do primeiro.O usuário deverá preencher completamente o primeiro vetor, enquanto o segundo vetor terá apenas a metade de seu tamanho ocupado.
 
-  int tam;
-  cin >> tam;
+    O programa deverá inserir os elementos do primeiro vetor no segundos vetor, em um determinada posição a ser informada pelo usuário.
 
-  int *vet = new int[tam];
-  for (int i = 0; i < tam; i++)
-    cin >> vet[i];
+    OBS.:Todos os elementos do primeiro vetor devem ser inseridos na mesma posição informada, sendo em que em cada passo da repetição, um novo número,elemento do primeiro vetor, ocupará posição.
 
-  int i = 0, j = tam - i - 1;
-  bool igual = false;
+    OBS2.:Considere que só poderá ter entradas de posição já ocupadas do segundo vetor.
 
-  while (vet[i] == vet[j] && i < tam / 2)
+    Entradas:
+
+    Tamanho do primeiro vetor (int).
+    Elementos do primeiro vetor (int).
+    Elementos do segundo vetor (int)
+    Posição a se inserir (int).
+    Saídas:
+
+    Cada passo da inserção dos elementos.
+    Exemplo de Entrada:
+
+    5
+    1 2 3 4 5
+    10 35 11 2 1
+    1
+    Exemplo de Saída:
+
+    10 1 35 11 2 1
+    10 2 1 35 11 2 1
+    10 3 2 1 35 11 2 1
+    10 4 3 2 1 35 11 2 1
+    10 5 4 3 2 1 35 11 2 1
+  */
+
+  // Leitura do vetor
+  int n, pos;
+  cin >> n;
+
+  int tamanho = n * 2;
+  int v1[n], v2[tamanho] = {-1};
+
+  for (int i = 0; i < tamanho; i++)
   {
-    cout << i << " " << vet[i] << " " << j << " " << vet[j] << " ";
-    i++;
-    j = tam - i - 1;
-    igual = true;
+    v2[i] = -1;
   }
 
-  if (igual)
-    cout << endl;
-  if (i == tam / 2)
-    cout << "sim" << endl;
-  else
-    cout << "nao" << endl;
+  for (int i = 0; i < n; i++)
+  {
+    cin >> v1[i];
+  }
 
-  delete[] vet;
+  for (int i = 0; i < n; i++)
+  {
+    cin >> v2[i];
+  }
+
+  cin >> pos;
+
+  // colocar na posição
+  for (int i = 0; i < n; i++)
+  {
+    // atribuindo o valor
+    for (int j = tamanho - 1; j >= pos; j--)
+    {
+      v2[j] = v2[j - 1];
+    }
+
+    v2[pos] = v1[i];
+    // pos++;
+
+    for (int j = 0; j < tamanho; j++)
+    {
+      if (v2[j] != -1)
+      {
+        cout << v2[j] << " ";
+      }
+    }
+    cout << endl;
+  }
 
   return 0;
 }

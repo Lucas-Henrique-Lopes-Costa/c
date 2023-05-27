@@ -53,7 +53,7 @@ int main()
 
     if (vetor[i] < 0)
     {
-    cin >> vetor[i];
+      cin >> vetor[i];
     }
     i++;
   }
@@ -75,6 +75,12 @@ int main()
       cout << i << " " << vetor[i] << " " << n - i - 1 << " " << vetor[n - i - 1] << " ";
       cont++;
     }
+  }
+
+  // imprime o valor do meio caso seja impar
+  if (n % 2 != 0 and capicua)
+  {
+    cout << (n - 1) / 2 << " " << vetor[(n - 1) / 2] << " " << (n - 1) / 2 << " " << vetor[(n - 1) / 2] << " ";
   }
 
   // imprimindo o resultado
