@@ -6,6 +6,7 @@
     "*.tsx": "typescriptreact",
     ".env.*": "dotenv",
     ".prettierrc": "json",
-    "random": "cpp"
+    "random": "cpp",
+    "iostream": "cpp"
   }
 }
