@@ -25,7 +25,7 @@ int main()
 
   inputFile.close();
 
-  const int NUMEROS_POR_ARQUIVO = 150; // Quantidade de números por arquivo
+  const int NUMEROS_POR_ARQUIVO = 20; // Quantidade de números por arquivo
   int arquivoAtual = 1;
 
   for (size_t i = 0; i < numeros.size(); i += NUMEROS_POR_ARQUIVO)

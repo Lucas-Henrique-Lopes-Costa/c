@@ -28,7 +28,7 @@ int main()
     #.#.#
     .#.#.
   */
-  
+
   int n;
   cin >> n;
 
@@ -36,16 +36,19 @@ int main()
 
   for (int i = 0; i < n; i++)
   {
-    for (int j = 0; j < n; j++) {
-      if ((i + j) % 2 == 0) {
+    for (int j = 0; j < n; j++)
+    {
+      if ((i + j) % 2 == 0)
+      {
         arquivoOut << ".";
-      } else {
+      }
+      else
+      {
         arquivoOut << "#";
       }
     }
     arquivoOut << endl;
   }
-  
 
   return 0;
 }

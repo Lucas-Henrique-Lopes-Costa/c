@@ -1,6 +1,5 @@
 #include <iostream>
 #include <cstring>
-#include <cmath>
 
 using namespace std;
 
@@ -30,13 +29,29 @@ int main()
   */
 
   // leitura dos dados
-  
+  string s;
+  char c1, c2;
+
+  getline(cin, s);
+  // cin.ignore();
+
+  cin >> c1 >> c2;
 
   // processamento
-  
+  for (long unsigned i = 0; i < s.length(); i++)
+  {
+    // output
+    if (s[i] == c1)
+    {
+      cout << c2;
+    }
+    else
+    {
+      cout << s[i];
+    }
+  }
 
-  // output
-  
+  cout << endl;
 
   return 0;
 }
