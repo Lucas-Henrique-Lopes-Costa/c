@@ -55,13 +55,29 @@ int main()
     for (int j = 0; j < tamanho - 1; j++)
     {
       // para cada posição da matriz, verifica se a posição e as 3 posições seguintes são vogais
-      if (matriz[i][j] == 'A' || matriz[i][j] == 'E' || matriz[i][j] == 'I' || matriz[i][j] == 'O' || matriz[i][j] == 'U')
+      if (matriz[i][j] == 'A' ||
+          matriz[i][j] == 'E' ||
+          matriz[i][j] == 'I' ||
+          matriz[i][j] == 'O' ||
+          matriz[i][j] == 'U')
       {
-        if (matriz[i][j + 1] == 'A' || matriz[i][j + 1] == 'E' || matriz[i][j + 1] == 'I' || matriz[i][j + 1] == 'O' || matriz[i][j + 1] == 'U')
+        if (matriz[i][j + 1] == 'A' ||
+            matriz[i][j + 1] == 'E' ||
+            matriz[i][j + 1] == 'I' ||
+            matriz[i][j + 1] == 'O' ||
+            matriz[i][j + 1] == 'U')
         {
-          if (matriz[i + 1][j] == 'A' || matriz[i + 1][j] == 'E' || matriz[i + 1][j] == 'I' || matriz[i + 1][j] == 'O' || matriz[i + 1][j] == 'U')
+          if (matriz[i + 1][j] == 'A' ||
+              matriz[i + 1][j] == 'E' ||
+              matriz[i + 1][j] == 'I' ||
+              matriz[i + 1][j] == 'O' ||
+              matriz[i + 1][j] == 'U')
           {
-            if (matriz[i + 1][j + 1] == 'A' || matriz[i + 1][j + 1] == 'E' || matriz[i + 1][j + 1] == 'I' || matriz[i + 1][j + 1] == 'O' || matriz[i + 1][j + 1] == 'U')
+            if (matriz[i + 1][j + 1] == 'A' ||
+                matriz[i + 1][j + 1] == 'E' ||
+                matriz[i + 1][j + 1] == 'I' ||
+                matriz[i + 1][j + 1] == 'O' ||
+                matriz[i + 1][j + 1] == 'U')
             {
               // imprime aquele trecho da matriz 2x2
               cout << matriz[i][j] << " " << matriz[i][j + 1] << endl;
