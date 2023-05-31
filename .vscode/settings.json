@@ -9,6 +9,7 @@
     "random": "cpp",
     "iostream": "cpp",
     "xutility": "cpp",
-    "istream": "cpp"
+    "istream": "cpp",
+    "ostream": "cpp"
   }
 }
