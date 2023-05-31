@@ -33,8 +33,8 @@ int main()
   cin.ignore(); // Ignorar a quebra de linha após o tamanho
 
   // processamento
-  const int UMPRIMO = 13;
-  const int M = 10;
+  const int UMPRIMO = 97;
+  const int M = 100;
 
   int hashTotal = 0;
   for (int i = 0; i < tamanho; i++)
