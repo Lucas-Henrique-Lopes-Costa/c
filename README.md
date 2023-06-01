@@ -1,6 +1,6 @@
 # Introdução a Algoritmos
 
-# *Componentes de algoritmos. Variáveis. Sistema de numeração. Tipos de dados. Declaração de Variáveis.*
+# _Componentes de algoritmos. Variáveis. Sistema de numeração. Tipos de dados. Declaração de Variáveis._
 
 <details>
 <summary> Quais são os elementos básicos de um algoritmo?</summary>
@@ -134,7 +134,7 @@
 </details>
 <br>
 
-# *Operadores, Entrada e Saída de dados, Estrutura Sequencial. Arquivos.*
+# _Operadores, Entrada e Saída de dados, Estrutura Sequencial. Arquivos._
 
 <details>
 <summary>Como é feita a associação de um valor a uma variável?</summary>
@@ -263,9 +263,9 @@ A diferença entre uma string e um vetor de caracteres está na forma como são 
 <summary> Para que servem as funções length(), size() e strlen()?</summary>
 
 As funções length(), size() e strlen() servem para obter o tamanho de uma string ou vetor de caracteres.
-    A função length() é usada para obter o tamanho de uma string no C++, ela retorna o número de caracteres na string, excluindo o caractere nulo (\0).
-    A função size() é usada para obter o tamanho de um vetor, ela retorna o número de elementos no vetor.
-    A função strlen() é usada para obter o comprimento de uma string em C, ela retorna o número de caracteres na string, excluindo o caractere nulo (\0).
+A função length() é usada para obter o tamanho de uma string no C++, ela retorna o número de caracteres na string, excluindo o caractere nulo (\0).
+A função size() é usada para obter o tamanho de um vetor, ela retorna o número de elementos no vetor.
+A função strlen() é usada para obter o comprimento de uma string em C, ela retorna o número de caracteres na string, excluindo o caractere nulo (\0).
 
 </details>
 <br>
@@ -334,206 +334,163 @@ Sim, é possível percorrer os índices de uma matriz usando o incremento de um 
 </details>
 <br>
 
-
 # Modularização e passagem de parâmetros
 
-1. A modularização é o processo de dividir um programa em módulos independentes e interconectados. Cada módulo é responsável por uma tarefa específica e pode ser desenvolvido e mantido separadamente. Isso facilita a compreensão, o desenvolvimento e a manutenção do código.
+</details>
+<br>
 
-2. Os tipos de retorno que um módulo pode ter são:
+<details>
+<summary>O que é modularização?</summary>
+A modularização é o processo de dividir um programa em módulos independentes e interconectados. Cada módulo é responsável por uma tarefa específica e pode ser desenvolvido e mantido separadamente. Isso facilita a compreensão, o desenvolvimento e a manutenção do código.
+</details>
+<br>
+
+<details>
+<summary>Quais são os tipos de retorno que um módulo pode ter?</summary>
+Os tipos de retorno que um módulo pode ter são:
     Void: indica que o módulo não retorna nenhum valor.
     Tipos primitivos (como int, float, double, etc.): o módulo retorna um valor do tipo especificado.
     Objetos ou estruturas definidas pelo usuário: o módulo retorna um objeto ou uma estrutura personalizada.
+</details>
+<br>
 
-3. O escopo de variáveis se refere à região do código em que uma variável é visível e pode ser acessada. Em C++, existem três principais escopos de variáveis:
+<details>
+<summary>Explique do se trata o escopo de variáveis?</summary>
+O escopo de variáveis se refere à região do código em que uma variável é visível e pode ser acessada. Em C++, existem três principais escopos de variáveis:
     Escopo global: as variáveis declaradas fora de qualquer função ou bloco são globais e podem ser acessadas por todo o programa.
     Escopo local: as variáveis declaradas dentro de uma função ou bloco são locais e só podem ser acessadas dentro desse escopo específico.
     Escopo de bloco: as variáveis declaradas dentro de um bloco delimitado por chaves ({}) só podem ser acessadas dentro desse bloco.
     Uma variável local é declarada dentro de uma função ou bloco e só é visível e acessível dentro desse escopo específico. Ela é criada quando a função é chamada ou o bloco é executado e é destruída quando a função ou o bloco é encerrado.
+</details>
+<br>
 
-4. Uma variável global é declarada fora de qualquer função ou bloco e pode ser acessada por todo o programa. Ela existe durante toda a execução do programa.
+<details>
+<summary>Explique o que é variável local e variável global.</summary>
+Uma variável global é declarada fora de qualquer função ou bloco e pode ser acessada por todo o programa. Ela existe durante toda a execução do programa.
     Uma função é um bloco de código que realiza uma tarefa específica e pode retornar um valor. Ela pode receber parâmetros como entrada e retornar um resultado.
+</details>
+<br>
 
-5. Uma função é um bloco de código que realiza uma tarefa específica e pode retornar um valor. Ela pode receber parâmetros como entrada e retornar um resultado.
+<details>
+<summary>Explique a diferença entre função e procedimento.</summary>
+Uma função é um bloco de código que realiza uma tarefa específica e pode retornar um valor. Ela pode receber parâmetros como entrada e retornar um resultado.
     Um procedimento, também conhecido como sub-rotina, é um bloco de código que realiza uma tarefa específica, mas não retorna um valor. Ele também pode receber parâmetros como entrada, mas não possui um valor de retorno.
+</details>
+<br>
 
-6. Parâmetros formais são as variáveis declaradas na definição de um subprograma (função ou procedimento) que são utilizadas para receber os valores passados como argumentos quando o subprograma é chamado. Eles são como "placeholders" para os valores reais que serão passados durante a chamada.
+<details>
+<summary>O que são parâmetros formais?</summary>
+Parâmetros formais são as variáveis declaradas na definição de um subprograma (função ou procedimento) que são utilizadas para receber os valores passados como argumentos quando o subprograma é chamado. Eles são como "placeholders" para os valores reais que serão passados durante a chamada.
+</details>
+<br>
 
-7. Parâmetros reais são os valores ou expressões passados como argumentos durante a chamada de um subprograma. Esses valores são atribuídos aos parâmetros formais correspondentes no momento da chamada.
+<details>
+<summary>O que são parâmetros reais?</summary>
+Parâmetros reais são os valores ou expressões passados como argumentos durante a chamada de um subprograma. Esses valores são atribuídos aos parâmetros formais correspondentes no momento da chamada.
+</details>
+<br>
 
-8. A passagem de parâmetros é o mecanismo pelo qual os valores ou referências de variáveis são passados para um subprograma (como uma função ou procedimento) quando ele é chamado. Isso permite que os subprogramas utilizem os valores passados como argumentos para realizar suas operações.
+<details>
+<summary>O que é passagem de parâmetros?</summary>
+A passagem de parâmetros é o mecanismo pelo qual os valores ou referências de variáveis são passados para um subprograma (como uma função ou procedimento) quando ele é chamado. Isso permite que os subprogramas utilizem os valores passados como argumentos para realizar suas operações.
+</details>
+<br>
 
-9. No código fornecido, os seguintes passos ocorrem quando o subprograma "soma" é chamado:
-    a) O programa principal solicita a entrada de dois valores inteiros (variáveis "a" e "b") do usuário.
-    b) O programa principal chama o subprograma "soma" passando os valores de "a" e "b" como argumentos.
-    c) O subprograma "soma" recebe os valores dos parâmetros "a" e "b" e os utiliza para realizar a operação de soma.
-    d) O resultado da soma é retornado pelo subprograma "soma".
-    e) O programa principal imprime o resultado retornado pelo subprograma "soma" usando a função "cout".
-
-10.  comando return é utilizado para retornar um valor de um subprograma de volta para o ponto de chamada. Ele também pode ser usado para encerrar precocemente a execução de um subprograma.
-
-11. Sim, um subprograma pode não ter retorno de valor. Nesse caso, ele é chamado de procedimento. Um procedimento realiza ações sem retornar um valor específico.
-
-12. No C++, não é possível retornar várias informações diretamente pela instrução return. Para retornar múltiplos valores, podem ser usados ponteiros ou referências, ou uma estrutura de dados (como uma struct ou uma classe) pode ser definida para armazenar os valores a serem retornados.
-
-13. 
-    a) Sim, o trecho de código compila corretamente, desde que as bibliotecas necessárias sejam incluídas no código.
-    b) O bloco "calcula" é uma função, pois possui um tipo de retorno definido (int).
-    c) Se valor = 5, o valor impresso será 120. O programa calcula o fatorial de valor (5!) e retorna o resultado.
-
-14. Subprograma "calcula" utilizando a estrutura do...while:
+<details>
+<summary>Utilizando o código abaixo, explique quais os passos que ocorrem quando um subprograma é chamado?</summary>
 
 ```
-int calcula(int n) {
-	int f = 1, c = 2;
-	do {
-		f *= c;
-		c++;
-	} while (c <= n);
-	return f;
+int soma (int a, int b) {
+	return a+b;
+}
+int main(){
+	int a,b;
+	cin>>a>>b;
+	cout<<soma(a,b);
+	return 0;
 }
 ```
 
-15. Subprograma para calcular o quociente inteiro de dois números sem usar a divisão (/) ou o operador resto (%):
+No código fornecido, os seguintes passos ocorrem quando o subprograma "soma" é chamado:
+    a. O programa principal solicita a entrada de dois valores inteiros (variáveis "a" e "b") do usuário.
+    b. O programa principal chama o subprograma "soma" passando os valores de "a" e "b" como argumentos.
+    c. O subprograma "soma" recebe os valores dos parâmetros "a" e "b" e os utiliza para realizar a operação de soma.
+    d. O resultado da soma é retornado pelo subprograma "soma".
+    e. O programa principal imprime o resultado retornado pelo subprograma "soma" usando a função "cout".
+</details>
+<br>
+
+<details>
+<summary> Para que serve o comando return?
+O comando return é utilizado para retornar um valor de um subprograma de volta para o ponto de chamada. Ele também pode ser usado para encerrar precocemente a execução de um subprograma.
+</details>
+<br>
+
+<details>
+<summary>Um subprograma pode não ter retorno de valor?
+Sim, um subprograma pode não ter retorno de valor. Nesse caso, ele é chamado de procedimento. Um procedimento realiza ações sem retornar um valor específico.
+</details>
+<br>
+
+<details>
+<summary>É possível retornar duas informações pela instrução return? Exemplo, return a, b;
+No C++, não é possível retornar várias informações diretamente pela instrução return. Para retornar múltiplos valores, podem ser usados ponteiros ou referências, ou uma estrutura de dados (como uma struct ou uma classe) pode ser definida para armazenar os valores a serem retornados.
+</details>
+<br>
+
+<details>
+<summary>Subprograma para calcular o quociente inteiro de dois números sem usar a divisão (/) ou o operador resto (%):
 
 ```
 int quocienteInteiro(int dividendo, int divisor) {
-	int quociente = 0;
-	while (dividendo >= divisor) {
-		dividendo -= divisor;
-		quociente++;
-	}
-	return quociente;
+ int quociente = 0;
+ while (dividendo >= divisor) {
+  dividendo -= divisor;
+  quociente++;
+ }
+ return quociente;
 }
 ```
 
-16. Subprograma para imprimir um triângulo de letras:
+</details>
+<br>
 
-```
-void imprimirTriangulo(int n) {
-	char letra = 'a';
-	for (int i = 1; i <= n; i++) {
-		for (int j = 1; j <= i; j++) {
-			cout << letra << " ";
-			letra++;
-		}
-		cout << endl;
-		letra = 'a';
-	}
-}
-```
-
-17. A passagem de parâmetros por valor ocorre quando o valor de uma variável é copiado e passado como argumento para um subprograma. Qualquer alteração feita no valor do parâmetro dentro do subprograma não afetará a variável original. Exemplo:
+<details>
+<summary>Explique com um exemplo o que é passagem de parâmetros por valor.
+A passagem de parâmetros por valor ocorre quando o valor de uma variável é copiado e passado como argumento para um subprograma. Qualquer alteração feita no valor do parâmetro dentro do subprograma não afetará a variável original. Exemplo:
 
 ```
 void dobrarValor(int x) {
-	x *= 2;
+ x *= 2;
 }
 
 int main() {
-	int num = 5;
-	dobrarValor(num);
-	cout << num;  // O valor impresso será 5, pois o valor de 'num' não foi alterado dentro do subprograma.
-	return 0;
+ int num = 5;
+ dobrarValor(num);
+ cout << num;  // O valor impresso será 5, pois o valor de 'num' não foi alterado dentro do subprograma.
+ return 0;
 }
 ```
 
-18. A passagem de parâmetros por referência ocorre quando o endereço de memória de uma variável é passado como argumento para um subprograma. Qualquer alteração feita no valor do parâmetro dentro do subprograma afetará diretamente a variável original. Exemplo:
+</details>
+<br>
+
+<details>
+<summary>Explique com um exemplo o que é passagem de parâmetros por referência.
+A passagem de parâmetros por referência ocorre quando o endereço de memória de uma variável é passado como argumento para um subprograma. Qualquer alteração feita no valor do parâmetro dentro do subprograma afetará diretamente a variável original. Exemplo:
 
 ```
 void dobrarValor(int& x) {
-	x *= 2;
+ x *= 2;
 }
 
 int main() {
-	int num = 5;
-	dobrarValor(num);
-	cout << num;  // O valor impresso será 10, pois o valor de 'num' foi alterado dentro do subprograma.
-	return 0;
+ int num = 5;
+ dobrarValor(num);
+ cout << num;  // O valor impresso será 10, pois o valor de 'num' foi alterado dentro do subprograma.
+ return 0;
 }
 ```
 
-19. Função Maximo que retorna o maior número entre dois valores reais:
-
-```
-#include <iostream>
-
-double Maximo(double a, double b) {
-	return (a > b) ? a : b;
-}
-
-int main() {
-	double num1, num2;
-	std::cin >> num1 >> num2;
-	std::cout << "Maior valor: " << Maximo(num1, num2) << std::endl;
-	return 0;
-}
-```
-
-20. Função para retornar o antecessor e sucessor de um número inteiro:
-
-```
-#include <iostream>
-
-void antecessorSucessor(int num, int& antecessor, int& sucessor) {
-	antecessor = num - 1;
-	sucessor = num + 1;
-}
-
-int main() {
-	int numero, antecessor, sucessor;
-	std::cin >> numero;
-	antecessorSucessor(numero, antecessor, sucessor);
-	std::cout << "Antecessor: " << antecessor << std::endl;
-	std::cout << "Número: " << numero << std::endl;
-	std::cout << "Sucessor: " << sucessor << std::endl;
-	return 0;
-}
-```
-
-21. Função para verificar se um número inteiro é primo:
-
-```
-#include <iostream>
-
-bool isPrimo(int num) {
-	if (num < 2)
-		return false;
-	for (int i = 2; i * i <= num; i++) {
-		if (num % i == 0)
-			return false;
-	}
-	return true;
-}
-
-int main() {
-	int numero;
-	std::cin >> numero;
-	if (isPrimo(numero))
-		std::cout << "É primo" << std::endl;
-	else
-		std::cout << "Não é primo" << std::endl;
-	return 0;
-}
-```
-
-22. Função para calcular o somatório com base em um parâmetro 'n':
-
-```
-#include <iostream>
-
-int somatorio(int n) {
-	int resultado = 0;
-	for (int i = 1; i <= n; i++) {
-		resultado += i;
-	}
-	return resultado;
-}
-
-int main() {
-	int numero;
-	std::cin >> numero;
-	int resultado = somatorio(numero);
-	std::cout << "Resultado: " << resultado << std::endl;
-	return 0;
-}
-```
+</details>
+<br>
