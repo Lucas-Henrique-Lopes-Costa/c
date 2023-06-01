@@ -251,246 +251,89 @@
 </details>
 <br>
 
-1. A diferença entre uma string e um vetor de caracteres está na forma como são tratados. Uma string é um tipo de dado especial em C/C++ que é tratado como uma sequência de caracteres terminada por um caractere nulo (\0). Um vetor de caracteres, por outro lado, é apenas uma sequência de caracteres sem nenhum tratamento especial.
+<details>
+<summary>Qual é a diferença entre uma string e um vetor de caracteres?</summary>
 
-2. As funções length(), size() e strlen() servem para obter o tamanho de uma string ou vetor de caracteres.
+A diferença entre uma string e um vetor de caracteres está na forma como são tratados. Uma string é um tipo de dado especial em C/C++ que é tratado como uma sequência de caracteres terminada por um caractere nulo (\0). Um vetor de caracteres, por outro lado, é apenas uma sequência de caracteres sem nenhum tratamento especial.
+
+</details>
+<br>
+
+<details>
+<summary> Para que servem as funções length(), size() e strlen()?</summary>
+
+As funções length(), size() e strlen() servem para obter o tamanho de uma string ou vetor de caracteres.
     A função length() é usada para obter o tamanho de uma string no C++, ela retorna o número de caracteres na string, excluindo o caractere nulo (\0).
     A função size() é usada para obter o tamanho de um vetor, ela retorna o número de elementos no vetor.
     A função strlen() é usada para obter o comprimento de uma string em C, ela retorna o número de caracteres na string, excluindo o caractere nulo (\0).
-    
-3. A função length() retorna um valor do tipo size_t, a função size() retorna um valor do tipo size_t e a função strlen() retorna um valor do tipo size_t.
 
-4. A função getline() é utilizada para ler uma linha inteira de entrada, incluindo espaços em branco, e armazená-la em uma string. Ela é especialmente útil quando se deseja ler uma linha inteira de texto digitada pelo usuário.
+</details>
+<br>
 
-5. A diferença no uso da função getline() com string e vetor de caracteres está na forma como os dados são armazenados. Quando usada com uma string (do tipo std::string), a função getline() armazena a linha lida diretamente na string. Já quando usada com um vetor de caracteres, é necessário fornecer o tamanho máximo do vetor como parâmetro e a função armazena a linha lida no vetor, limitando o número de caracteres ao tamanho máximo especificado.
+<details>
+<summary>Qual é o tipo de retorno dessa funções?</summary>
 
-6. A função cin.ignore() é utilizada para descartar caracteres indesejados do buffer de entrada. Ela é comumente usada após a leitura de dados numéricos usando cin, para descartar caracteres extras (como espaços em branco, novas linhas) que possam interferir na próxima leitura.
+A função length() retorna um valor do tipo size_t, a função size() retorna um valor do tipo size_t e a função strlen() retorna um valor do tipo size_t.
 
-7. Uma matriz em C/C++ é uma estrutura de dados bidimensional que consiste em uma coleção de elementos organizados em linhas e colunas.
+</details>
+<br>
 
-8. Para declarar uma matriz em C/C++, você precisa especificar o tipo dos elementos da matriz e o tamanho das dimensões. A sintaxe geral é: tipo nome_da_matriz[linha][coluna];
+<details>
+<summary>Para que é utilizada a função getline()?</summary>
 
-9. Sim, é possível ter uma matriz de string em C/C++. Para isso, você precisa declarar uma matriz de ponteiros para char (ou seja, um vetor de strings) e alocar memória para cada string individualmente.
+A função getline() é utilizada para ler uma linha inteira de entrada, incluindo espaços em branco, e armazená-la em uma string. Ela é especialmente útil quando se deseja ler uma linha inteira de texto digitada pelo usuário.
 
-10. Exemplo de declaração e preenchimento de uma matriz 3x4 lendo os dados da entrada padrão:
+</details>
+<br>
 
-```
-#include <iostream>
+<details>
+<summary>Qual é a diferença  no uso de getline() com string e com vetor de caracteres?</summary>
 
-int main() {
-    int matriz[3][4];
+A diferença no uso da função getline() com string e vetor de caracteres está na forma como os dados são armazenados. Quando usada com uma string (do tipo std::string), a função getline() armazena a linha lida diretamente na string. Já quando usada com um vetor de caracteres, é necessário fornecer o tamanho máximo do vetor como parâmetro e a função armazena a linha lida no vetor, limitando o número de caracteres ao tamanho máximo especificado.
 
-    // Preenchendo a matriz com dados lidos da entrada padrão
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 4; j++) {
-            std::cin >> matriz[i][j];
-        }
-    }
+</details>
+<br>
 
-    // Imprimindo os dados da matriz
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 4; j++) {
-            std::cout << matriz[i][j] << " ";
-        }
-        std::cout << std::endl;
-    }
+<details>
+<summary>Quando é necessário utilizar cin.ignore()?</summary>
 
-    return 0;
-}
+A função cin.ignore() é utilizada para descartar caracteres indesejados do buffer de entrada. Ela é comumente usada após a leitura de dados numéricos usando cin, para descartar caracteres extras (como espaços em branco, novas linhas) que possam interferir na próxima leitura.
 
-```
+</details>
+<br>
 
-11. Exemplo de declaração de uma matriz nxn e preenchimento com dados lidos do arquivo "entrada.txt":
+<details>
+<summary>O que é uma matriz em C/C++?</summary>
 
-```
-#include <iostream>
-#include <fstream>
+Uma matriz em C/C++ é uma estrutura de dados bidimensional que consiste em uma coleção de elementos organizados em linhas e colunas.
 
-int main() {
-    int n;
-    std::ifstream arquivo("entrada.txt");
+</details>
+<br>
 
-    // Lendo o valor de n do arquivo
-    arquivo >> n;
+<details>
+<summary>Como se declara uma matriz?</summary>
 
-    int matriz[n][n];
+Para declarar uma matriz em C/C++, você precisa especificar o tipo dos elementos da matriz e o tamanho das dimensões. A sintaxe geral é: tipo nome_da_matriz[linha][coluna];
 
-    // Preenchendo a matriz com dados do arquivo
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++) {
-            arquivo >> matriz[i][j];
-        }
-    }
+</details>
+<br>
 
-    arquivo.close();
+<details>
+<summary>É possível ter uma matriz de string?</summary>
 
-    // Imprimindo os dados da matriz
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++) {
-            std::cout << matriz[i][j] << " ";
-        }
-        std::cout << std::endl;
-    }
+Sim, é possível ter uma matriz de string em C/C++. Para isso, você precisa declarar uma matriz de ponteiros para char (ou seja, um vetor de strings) e alocar memória para cada string individualmente.
 
-    return 0;
-}
-```
+</details>
+<br>
 
-12. Exemplo de código para imprimir os elementos da matriz pelas colunas:
+<details>
+<summary>É possível percorrer os índices de uma matriz usando o incremento de um ponteiro?</summary>
 
-```
-#include <iostream>
+Sim, é possível percorrer os índices de uma matriz usando o incremento de um ponteiro. Em C++, uma matriz é armazenada em memória como um bloco contíguo de elementos.
 
-int main() {
-    int matriz[2][2] = {{3, 4}, {5, 6}};
+</details>
+<br>
 
-    // Imprimindo os elementos da matriz pelas colunas
-    for (int j = 0; j < 2; j++) {
-        for (int i = 0; i < 2; i++) {
-            std::cout << matriz[i][j] << " ";
-        }
-        std::cout << std::endl;
-    }
-
-    return 0;
-}
-```
-
-13. Exemplo de código para imprimir o maior elemento da matriz:
-
-```
-#include <iostream>
-
-int main() {
-    int matriz[3][3] = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
-    int maior = matriz[0][0];
-
-    // Encontrando o maior elemento da matriz
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-            if (matriz[i][j] > maior) {
-                maior = matriz[i][j];
-            }
-        }
-    }
-
-    std::cout << "Maior elemento da matriz: " << maior << std::endl;
-
-    return 0;
-}
-```
-
-14. Exemplo de código para imprimir a linha do menor elemento da matriz:
-
-```
-#include <iostream>
-
-int main() {
-    int matriz[3][3] = {{1, 2, 3}, {4, 0, 6}, {7, 8, 9}};
-    int menor = matriz[0][0];
-    int linhaMenor = 0;
-
-    // Encontrando o menor elemento da matriz e a linha correspondente
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-            if (matriz[i][j] < menor) {
-                menor = matriz[i][j];
-                linhaMenor = i;
-            }
-        }
-    }
-
-    std::cout << "Linha do menor elemento da matriz: " << linhaMenor << std::endl;
-
-    return 0;
-}
-```
-
-15. Aqui está um exemplo de função em C++ que recebe uma matriz 4x4 como parâmetro e multiplica todos os elementos por 10:
-
-```
-#include <iostream>
-
-void multiplyByTen(int matrix[4][4]) {
-    for (int i = 0; i < 4; i++) {
-        for (int j = 0; j < 4; j++) {
-            matrix[i][j] *= 10;
-        }
-    }
-}
-
-int main() {
-    int matrix[4][4] = {
-        {1, 2, 3, 4},
-        {5, 6, 7, 8},
-        {9, 10, 11, 12},
-        {13, 14, 15, 16}
-    };
-
-    multiplyByTen(matrix);
-
-    // Imprime a matriz multiplicada por 10
-    for (int i = 0; i < 4; i++) {
-        for (int j = 0; j < 4; j++) {
-            std::cout << matrix[i][j] << " ";
-        }
-        std::cout << std::endl;
-    }
-
-    return 0;
-}
-```
-
-A função multiplyByTen recebe uma matriz 4x4 como parâmetro e itera sobre cada elemento, multiplicando-o por 10.
-
-16. Aqui está um exemplo de trecho de código que realiza a alocação dinâmica de uma matriz, preenche-a com dados da entrada padrão e, em seguida, desaloca a matriz:
-
-```
-#include <iostream>
-
-int main() {
-    int rows, columns;
-    std::cout << "Informe o número de linhas: ";
-    std::cin >> rows;
-    std::cout << "Informe o número de colunas: ";
-    std::cin >> columns;
-
-    // Alocação dinâmica da matriz
-    int** matrix = new int*[rows];
-    for (int i = 0; i < rows; i++) {
-        matrix[i] = new int[columns];
-    }
-
-    // Preenchimento da matriz com dados da entrada padrão
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < columns; j++) {
-            std::cout << "Informe o elemento [" << i << "][" << j << "]: ";
-            std::cin >> matrix[i][j];
-        }
-    }
-
-    // Impressão da matriz
-    std::cout << "Matriz informada:" << std::endl;
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < columns; j++) {
-            std::cout << matrix[i][j] << " ";
-        }
-        std::cout << std::endl;
-    }
-
-    // Desalocação da matriz
-    for (int i = 0; i < rows; i++) {
-        delete[] matrix[i];
-    }
-    delete[] matrix;
-
-    return 0;
-}
-```
-
-Nesse exemplo, o usuário informa o número de linhas e colunas da matriz. Em seguida, é feita a alocação dinâmica da matriz utilizando ponteiros. Os elementos são preenchidos com dados da entrada padrão e, por fim, a matriz é desalocada utilizando delete[].
-
-17. Sim, é possível percorrer os índices de uma matriz usando o incremento de um ponteiro. Em C++, uma matriz é armazenada em memória como um bloco contíguo de elementos.
 
 # Modularização e passagem de parâmetros
 
