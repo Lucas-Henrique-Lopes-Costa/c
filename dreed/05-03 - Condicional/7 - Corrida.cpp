@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 int main()
@@ -32,31 +33,55 @@ int main()
         3
     */
 
-    int separacao, tempoPrimeiro, tempoUltimo, numVoltas, numVoltasRetardo = 0, numVoltasAtraso = 0;
-    cin >> separacao >> tempoPrimeiro >> tempoUltimo >> numVoltas;
+    int separa, tvPrimeiroInfo, tvUltimoInfo, qtdTotalVoltas, volta, contVoltaPrim = 0;
+    float tvPrimeiro, tvUltimo, voltaPrimeiro = 0, voltaUltima = 0;
+    bool naoRetardatario = true;
 
-    // se o primeiro colocado largou atrás do último, inverte os tempos
-    if (separacao < 0)
-    {
-        swap(tempoPrimeiro, tempoUltimo);
-        separacao = -separacao;
-    }
+    cin >> separa >> tvPrimeiroInfo >> tvUltimoInfo >> qtdTotalVoltas;
 
-    // determina em quantas voltas o último colocado se tornará um retardatário
-    if (tempoUltimo <= tempoPrimeiro)
+    tvPrimeiro = ceil((1.0 / tvPrimeiroInfo) * 100)/100;
+    tvUltimo = ceil((1.0 / tvUltimoInfo) * 100)/100;
+
+    if (separa >= 0)
     {
-        numVoltasRetardo = -1;
+        voltaPrimeiro = separa;
+        volta = separa + 1;
     }
     else
     {
-        numVoltasRetardo = (separacao + (numVoltas - 1) * tempoUltimo) / (numVoltas * (tempoUltimo - tempoPrimeiro));
+        voltaUltima = separa * (-1);
+        volta = 1;
     }
 
-    // determina quantas voltas o último colocado ficou atrás do primeiro
-    numVoltasAtraso = (separacao + numVoltasRetardo * numVoltas * (tempoUltimo - tempoPrimeiro)) / (tempoPrimeiro - tempoUltimo);
+    if(volta >= qtdTotalVoltas)
+    {
+        cout << -1 << endl;
+        cout << -1 << endl;
+    }
+    else
+    {
+        contVoltaPrim = voltaPrimeiro;
 
-    cout << numVoltasRetardo << endl
-         << numVoltasAtraso << endl;
+        while (voltaPrimeiro < qtdTotalVoltas)
+        {
+            voltaPrimeiro += tvPrimeiro;
+            voltaUltima += tvUltimo;
+
+            if (voltaPrimeiro - 1 > voltaUltima and naoRetardatario)
+            {
+                cout << volta << endl;
+                naoRetardatario = false;
+            }
+
+            if (contVoltaPrim != int(voltaPrimeiro))
+            {
+                volta++;
+                contVoltaPrim = int(voltaPrimeiro);
+            }
+        }
+
+        cout << round(voltaPrimeiro) - round(voltaUltima) << endl;
+    }
 
     return 0;
 }
