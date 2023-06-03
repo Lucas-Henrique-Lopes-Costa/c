@@ -15,12 +15,22 @@ int main()
   */
 
   // inicializando os arquivos
-  ifstream arquivo("moda.txt");
+  cout << "Bem Vindo, mestre Jedi! Vamos calcular a maior moda de um arquivo de valores inteiros." << endl;
+  cout << "Digite o nome do arquivo: ";
 
-  // inicializando as variáveis
-  int valor;
+  string nomeArquivo;
+  cin >> nomeArquivo;
+
+  ifstream arquivo(nomeArquivo);
+  // verificando se o arquivo foi aberto corretamente
+  if (!arquivo.is_open())
+  {
+    cout << "Erro ao abrir o arquivo" << endl;
+    return 0;
+  }
 
   // passando o arquivo para um vetor
+  int valor;
   int vetor[100];
   int i = 0;
 
@@ -47,14 +57,10 @@ int main()
     }
   }
 
-  // // Teste: imprimir vetor ordenado:
-  // for (int j = 0; j < i; j++)
-  // {
-  //   cout << vetor[j] << " ";
-  // }
-
   // contando a moda e mostrando o último valor da maior moda
   int maiorModa = 0;
+  int moda = 0;
+
   for (int j = 0; j < i; j++)
   {
     int frequenciaModa = 1;
@@ -64,6 +70,12 @@ int main()
       if (vetor[j] == vetor[k])
       {
         frequenciaModa++;
+      }
+      
+      // pegando o maior número com essa moda
+      if (frequenciaModa == maiorModa)
+      {
+        moda = vetor[j];
       }
     }
 
@@ -73,27 +85,7 @@ int main()
     }
   }
 
-  // pegando o maior número com essa moda
-  int moda = 0;
-  for (int j = 0; j < i; j++)
-  {
-    int frequenciaModa = 1;
-
-    for (int k = j + 1; k < i; k++)
-    {
-      if (vetor[j] == vetor[k])
-      {
-        frequenciaModa++;
-      }
-    }
-
-    if (frequenciaModa == maiorModa)
-    {
-      moda = vetor[j];
-    }
-  }
-
-  cout "A maior moda e: " << moda << endl;
+  cout << "A maior moda e: " << moda << endl;
 
   return 0;
 }
