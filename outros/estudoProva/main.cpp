@@ -12,7 +12,7 @@ int main()
   ifstream arquivo("questoes.txt");
   if (!arquivo.is_open())
   {
-    cout << "Erro ao abrir o arquivo" << endl;
+    cout << "Erro ao abrir o arquivo :(" << endl;
     return 0;
   }
 
