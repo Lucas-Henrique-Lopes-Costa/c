@@ -57,5 +57,11 @@
     "xmemory": "cpp",
     "xstddef": "cpp",
     "xtr1common": "cpp"
-  }
+  },
+  "cSpell.words": [
+    "aulao",
+    "Modulacao",
+    "Modularizacao",
+    "Variaveis"
+  ]
 }

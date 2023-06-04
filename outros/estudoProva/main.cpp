@@ -47,6 +47,7 @@ int main()
   // Exibir a Atividade e a Questão
   cout << "Atividade sorteada: " << atividadeSorteada << endl;
   cout << "Questao sorteada: " << questaoSorteada << endl;
+  cout << "Acesse as questões aqui: https://github.com/Lucas-Henrique-Lopes-Costa/c/blob/27482b30690c101b9cdd5cfc07144664112d2a89/aulas" << endl;
 
   return 0;
 }
