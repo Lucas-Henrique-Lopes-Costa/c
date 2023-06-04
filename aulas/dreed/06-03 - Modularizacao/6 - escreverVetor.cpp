@@ -59,5 +59,7 @@ int main()
 
 	formata(numeros, n);
 
+	cout << endl;
+
 	return 0;
 }
