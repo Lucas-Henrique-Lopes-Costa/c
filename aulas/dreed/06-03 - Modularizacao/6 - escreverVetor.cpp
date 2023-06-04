@@ -5,7 +5,7 @@ void formata(int numeros[], int tamanho)
 {
 	cout << "[";
 	
-	if (tamanho > 2)
+	if (tamanho > 0)
 	{
 		for (int i = 0; i < tamanho; i++)
 		{
