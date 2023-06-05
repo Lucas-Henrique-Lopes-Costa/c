@@ -3,14 +3,14 @@ using namespace std;
 
 void Max2(float numeros[], int tamanho, float &A, float &B)
 {
-  for (int i = 0; i < tamanho; i++)
+  for (int i = 2; i < tamanho; i++)
   {
     if (numeros[i] > A)
     {
       B = A;
       A = numeros[i];
     }
-    else if (B < numeros[i])
+    else if (numeros[i] > B)
     {
       B = numeros[i];
     }
@@ -55,13 +55,18 @@ int main()
     cin >> numeros[i];
   }
 
-  float A = numeros[0];
-  float B = numeros[1];
+  float A;
+  float B;
 
-  if (A < B)
+  if (numeros[0] > numeros[1])
   {
-    A = B;
-    B = A;
+    A = numeros[0];
+    B = numeros[1];
+  }
+  else
+  {
+    A = numeros[1];
+    B = numeros[0];
   }
 
   Max2(numeros, n, A, B);
