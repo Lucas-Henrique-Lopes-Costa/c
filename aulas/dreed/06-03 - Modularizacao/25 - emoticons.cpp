@@ -81,7 +81,7 @@ int main()
 		3
 		0
 	*/
-	
+
 	// Lendo informações do texto 1
 	int n1, m1;
 	cin >> n1 >> m1;
