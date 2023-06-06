@@ -20,8 +20,8 @@ int main()
   string nomeAtividade;
   int qtdQuestoes;
 
-  string atividades[10];
-  int qtdQuestoesAtividades[10];
+  string atividades[100];
+  int qtdQuestoesAtividades[100];
 
   int i = 0;
 
