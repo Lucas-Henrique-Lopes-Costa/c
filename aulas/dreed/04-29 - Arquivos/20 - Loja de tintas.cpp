@@ -14,8 +14,8 @@ int main()
   arquivoIn >> valorGalao;
 
   ofstream arquivoOut("saida.txt");
-  arquivoOut << ceil((area / 3.0/18)) << endl;
-  arquivoOut << fixed << setprecision(2) << ceil((area / 3.0/18)) * valorGalao << endl;
+  arquivoOut << ceil((area / 3.0 / 18)) << endl;
+  arquivoOut << fixed << setprecision(2) << ceil((area / 3.0 / 18)) * valorGalao << endl;
 
   return 0;
 }

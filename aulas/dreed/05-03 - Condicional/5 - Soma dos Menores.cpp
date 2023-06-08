@@ -22,7 +22,9 @@ int main()
   else if (n3 > n1 and n3 > n2 and n3 > n4)
   {
     cout << n1 + n2 + n4 << endl;
-  } else {
+  }
+  else
+  {
     cout << n1 + n2 + n3 << endl;
   }
 

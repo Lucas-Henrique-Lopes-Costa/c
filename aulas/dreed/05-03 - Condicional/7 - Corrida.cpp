@@ -39,8 +39,8 @@ int main()
 
     cin >> separa >> tvPrimeiroInfo >> tvUltimoInfo >> qtdTotalVoltas;
 
-    tvPrimeiro = ceil((1.0 / tvPrimeiroInfo) * 100)/100;
-    tvUltimo = ceil((1.0 / tvUltimoInfo) * 100)/100;
+    tvPrimeiro = ceil((1.0 / tvPrimeiroInfo) * 100) / 100;
+    tvUltimo = ceil((1.0 / tvUltimoInfo) * 100) / 100;
 
     if (separa >= 0)
     {
@@ -53,7 +53,7 @@ int main()
         volta = 1;
     }
 
-    if(volta >= qtdTotalVoltas)
+    if (volta >= qtdTotalVoltas)
     {
         cout << -1 << endl;
         cout << -1 << endl;

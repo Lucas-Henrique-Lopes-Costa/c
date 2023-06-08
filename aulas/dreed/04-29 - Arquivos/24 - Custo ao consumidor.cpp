@@ -14,10 +14,12 @@ int main()
     float valorLucro = precoF * percentualLucro;
     float valorImposto = precoF * percentualImposto;
     float valorCarro = valorLucro + valorImposto + precoF;
-    
+
     ofstream arquivoOut;
     arquivoOut.open("custo.txt");
-    arquivoOut << fixed << setprecision(2) << valorLucro << endl << valorImposto << endl << valorCarro << endl;
+    arquivoOut << fixed << setprecision(2) << valorLucro << endl
+               << valorImposto << endl
+               << valorCarro << endl;
     arquivoOut.close();
 
     return 0;

@@ -19,13 +19,15 @@ void removerEmojis(string texto[], string emoticons[], int m, int n, int &cont)
 					// Percorrendo emotico
 					bool existeEmoticon = true;
 
-					// verifica se algum dos emoticons existe no texto, depois soma no valor de cont o tamanho do emoticon
-					for (long unsigned l = 0; l < emoticons[j].length() && existeEmoticon; l++)
+					// usando while
+					long unsigned l = 0;
+					while (l < emoticons[j].length() && existeEmoticon)
 					{
 						if (texto[i][k + l] != emoticons[j][l])
 						{
 							existeEmoticon = false;
 						}
+						l++;
 					}
 
 					if (existeEmoticon)
@@ -82,84 +84,49 @@ int main()
 		0
 	*/
 
-	// Lendo informações do texto 1
-	int n1, m1;
-	cin >> n1 >> m1;
+	// Lendo informações
+	int n, m;
+	cin >> n >> m;
 
-	// Lendo emoticons 1
-	string emoticons1[n1];
+	// Armazena os resultados no vetor
+	int resultados[200];
+	int j = 0;
 
-	for (int i = 0; i < n1; i++)
+	// repita enquanto n e m forem diferentes de 0
+	while (n != 0 && m != 0)
 	{
-		cin >> emoticons1[i];
-		cin.ignore();
+		// Lendo emoticons
+		string emoticons[n];
+
+		for (int i = 0; i < n; i++)
+		{
+			cin >> emoticons[i];
+			cin.ignore();
+		}
+
+		// Lendo
+		string texto[m];
+
+		for (int i = 0; i < m; i++)
+		{
+			getline(cin, texto[i]);
+		}
+
+		// Excecutando
+		int cont = 0;
+		removerEmojis(texto, emoticons, m, n, cont);
+
+		// Armazenando resultado
+		resultados[j] = cont;
+		j++;
+
+		// Lendo informações
+		cin >> n >> m;
 	}
 
-	// Lendo texto 1
-	string texto1[m1];
-
-	for (int i = 0; i < m1; i++)
-	{
-		getline(cin, texto1[i]);
-	}
-
-	// Excecutando função 1
-	int cont1 = 0;
-	removerEmojis(texto1, emoticons1, m1, n1, cont1);
-
-	// Lendo informações do texto 2
-	int n2, m2;
-	cin >> n2 >> m2;
-
-	// Lendo emoticons 2
-	string emoticons2[n2];
-
-	for (int i = 0; i < n2; i++)
-	{
-		cin >> emoticons2[i];
-		cin.ignore();
-	}
-
-	// Lendo texto 2
-	string texto2[m2];
-
-	for (int i = 0; i < m2; i++)
-	{
-		getline(cin, texto2[i]);
-	}
-
-	// Excecutando função 2
-	int cont2 = 0;
-	removerEmojis(texto2, emoticons2, m2, n2, cont2);
-
-	// Lendo informações do texto 3
-	int n3, m3;
-	cin >> n3 >> m3;
-
-	// Lendo emoticons 3
-	string emoticons3[n3];
-
-	for (int i = 0; i < n3; i++)
-	{
-		cin >> emoticons3[i];
-		cin.ignore();
-	}
-
-	// Lendo texto 3
-	string texto3[m3];
-
-	for (int i = 0; i < m3; i++)
-	{
-		getline(cin, texto3[i]);
-	}
-
-	// Excecutando função 3
-	int cont3 = 0;
-	removerEmojis(texto3, emoticons3, m3, n3, cont3);
-
-	cout << cont1 << endl;
-	cout << cont2 << endl;
-	cout << cont3 << endl;
+	// Imprimindo resultados
+	for (int i = 0; i < j; i++)
+		cout << resultados[i] << endl;
 
 	return 0;
 }

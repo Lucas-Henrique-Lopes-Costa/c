@@ -13,7 +13,7 @@ int main()
         a -= b;
         cont++;
     }
-    
+
     cout << cont << endl;
 
     return 0;

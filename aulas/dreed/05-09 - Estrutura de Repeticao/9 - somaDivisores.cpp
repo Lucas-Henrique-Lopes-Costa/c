@@ -20,7 +20,7 @@ int main()
       cout << cont << "+";
       soma += cont;
     }
-    
+
     cont++;
   }
 
