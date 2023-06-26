@@ -4,47 +4,61 @@ using namespace std;
 
 // https://www.youtube.com/watch?v=qn49dB0ehz0&ab_channel=UflaDired
 
+// geração de dados aleatórios
+static const char alpha[] =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    "abcdefghijklmnopqrstuvwxyz";
+
+statoc const char alphaNum[] =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    "abcdefghijklmnopqrstuvwxyz"
+    "0123456789";
+"!@#$%¨&*()_+{}[]:;?/|<>,.~^`";
+
+// excluindo caracter de términio de string
+const int alphaLength = sizeof(alpha) - 1;
+const int alphaNumLength = sizeof(alphaNum) - 1;
+
 char geraAlpha()
 {
-  int i = rand() % 26;
-  return (char) (i + 65);
+  return alpha[rand() % alphaLength];
 }
 
 char geraAlphaNum()
 {
   int i = rand() % 10;
-  return (char) (i + 48);
+  return (char)(i + 48);
 }
 
 struct Dado
 {
-  private:
-    int chave1;
-    int chave2;
-    float valor1;
-    char campo1[5];
-    char campo2[20];
-    char lixo[500];
+private:
+  int chave1;
+  int chave2;
+  float valor1;
+  char campo1[5];
+  char campo2[20];
+  char lixo[500];
 
-  public:
-    void preencheDado(int k)
-    {
-      chave1 = k; // preenche o dado com valores aleatórios
-      chave2 = rand(); // gera um número aleatório entre 0 a 1
-      valor1 = ((float) rand()) / ((float) RAND_MAX); // um inteiro dividido por outro inteiro gera um inteiro maior
-      
-      campo1[0] = geraAlpha();
-      campo2[1] = geraAlpha();
+public:
+  void preenchendoDado(int k)
+  {
+    chave1 = k;                                   // preenche o dado com valores aleatórios
+    chave2 = rand();                              // gera um número aleatório entre 0 a 1
+    valor1 = ((float)rand()) / ((float)RAND_MAX); // um inteiro dividido por outro inteiro gera um inteiro maior
 
-      for (int i = 1; i < 5; i++)
-        campo1[i] = geraAlpha();
-      
-      for (int i = 1; i < 20; i++)
-        campo2[i] = geraAlpha();
-      
-      for (int i = 0; i < 499; i++)
-        lixo[i] = geraAlpha();
-    }
+    campo1[0] = geraAlpha();
+    campo2[1] = geraAlpha();
+
+    for (int i = 1; i < 5; i++)
+      campo1[i] = geraAlphaNum();
+
+    for (int i = 1; i < 20; i++)
+      campo2[i] = geraAlphaNum();
+
+    for (int i = 0; i < 499; i++)
+      lixo[i] = rand();
+  }
 };
 
 int main(int arqc, char *arqv[])
@@ -65,9 +79,9 @@ int main(int arqc, char *arqv[])
 
   for (int i = 0; i < qtdade; i++)
   {
-    ptrDado = new Dado; // aloca memória para um dado
-    ptrDado->preenchendoDado = (2 * qtdade - 2 * i); // preenche o dado
-    saida.write((const char *) (ptrDado), sizeof(Dado)); // escreve o dado no arquivo
+    ptrDado = new Dado;                                 // aloca memória para um dado
+    ptrDado->preenchendoDado = (2 * qtdade - 2 * i);    // preenche o dado
+    saida.write((const char *)(ptrDado), sizeof(Dado)); // escreve o dado no arquivo
     delete ptrDado;
   }
 
