@@ -64,11 +64,75 @@ Charizard
 #include <iomanip>
 using namespace std;
 
+struct Pokemon
+{
+  string nome;
+  int ataque;
+  int defesa;
+};
 
+struct Treinador
+{
+  string nome;
+  Pokemon pokemons[3];
+};
+
+void duelo(Treinador desafiante, Treinador lider, int &posicaoAtaque, int &posicaoDefesa)
+{
+  int maiorAtaque = 0;
+  int maiorDefesa = 0;
+
+  for (int i = 0; i < 3; i++)
+  {
+    if (desafiante.pokemons[i].ataque > maiorAtaque)
+    {
+      maiorAtaque = desafiante.pokemons[i].ataque;
+      posicaoAtaque = i;
+    }
+
+    if (lider.pokemons[i].defesa > maiorDefesa)
+    {
+      maiorDefesa = lider.pokemons[i].defesa;
+      posicaoDefesa = i;
+    }
+  }
+}
 
 int main()
 {
-  
+  int n;
+  cin >> n;
+
+  Treinador treinadores[n];
+
+  for (int i = 0; i < n; i++)
+  {
+    cin >> treinadores[i].nome;
+
+    for (int j = 0; j < 3; j++)
+    {
+      cin >> treinadores[i].pokemons[j].nome;
+      cin >> treinadores[i].pokemons[j].ataque;
+      cin >> treinadores[i].pokemons[j].defesa;
+    }
+  }
+
+  int A, B;
+  cin >> A >> B;
+
+  int posicaoAtaque, posicaoDefesa;
+  duelo(treinadores[A], treinadores[B], posicaoAtaque, posicaoDefesa);
+
+  if (treinadores[posicaoAtaque].pokemons[0].ataque > treinadores[posicaoDefesa].pokemons[0].defesa)
+  {
+    cout << treinadores[A].nome << endl;
+    cout << treinadores[A].pokemons[posicaoAtaque].nome << endl;
+  }
+  else
+  {
+    cout << treinadores[B].nome << endl;
+    cout << treinadores[B].pokemons[posicaoDefesa].nome << endl;
+  }
 
   return 0;
 }
