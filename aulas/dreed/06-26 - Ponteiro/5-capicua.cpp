@@ -1,30 +1,38 @@
 /*
-O Comitê Olímpico Internacional (COI) resolveu criar uma tabela de pontuação das Olimpíadas para ser usada no lugar do Quadro de Medalhas. A ideia é que cada tipo de medalha (ouro, prata e bronze) tenha uma pontuação diferente. Assim, a pontuação de um time seria baseada na quantidade de medalhas recebidas e nessa pontuação.
+Um número inteiro não negativo é dito ser capicua quando lido da esquerda para a direita é o mesmo que quando lido da direita para a esquerda. O ano 2002, por exemplo, é capicua. Implemente um programa que receba a quantidade de dígitos que serão inseridos e armazene-os em um vetor alocado dinamicamente. O programa deverá responder se os dígitos lidos compõem um número capicua ou não. Em caso positivo, escreva "sim", em caso negativo, escreva "nao". Além do resultado final, o programa deve, enquanto as comparações forem verdadeiras, escrever as posições e os elementos comparados.
 
-O COI precisa definir qual será a pontuação de cada tipo de medalha e, para testar isso, pediu a você para fazer um programa que receba quantos pontos valem cada tipo de medalha e a quantidade de medalhas de um determinado país. Seu programa deverá então exibir a pontuação daquele país nessa tabela de pontuação proposta.
+Entrada do programa:
+Quantidade de dígitos a serem inseridos
+Sequência de dígitos a serem armazenados (mesma linha).
 
-Para isso seu programa deve:
+Saída do programa:
 
-Guardar os pontos de cada tipo de medalha em memória alocada dinamicamente.
-Criar um registro para guardar as quantidades de medalhas do país.
-Usar alocação dinâmica para guardar o registro acima.
+Posições e valores comparados enquanto as comparações forem verdadeiras. Uma palavra ("sim" ou "nao" - em minúsculas, sem acentos) que indica se o número é capicua.
 
-Entradas:
-Três números inteiros representando quantos pontos valem os tipos de medalha (ouro, prata e bronze, nessa ordem).
-Três números inteiros representando a quantidade de medalhas recebida por um determinado país (de ouro, de prata e de bronze, nessa ordem).
+Exemplo de entrada do programa:
+6
+1 2 3 3 2 1
 
-Saídas:
-A pontuação do país na tabela proposta pelo COI.
+Exemplo de saída do programa:
+0 1 5 1 1 2 4 2 2 3 3 3
+sim
 
-Exemplo de Entrada:
-10 5 1
-2 2 2
+Exemplo de entrada do programa:
+11
+1 2 3 4 5 5 4 3 2 1 0
 
-Exemplo de Saída:
-32
+Exemplo de saída do programa:
+nao
+
+Exemplo de entrada do programa:
+11
+1 2 3 4 5 5 0 4 3 2 1
+
+Exemplo de saída do programa:
+0 1 10 1 1 2 9 2 2 3 8 3 3 4 7 4
+nao
 */
 #include <iostream>
-#include <fstream>
 using namespace std;
 
 int main()
