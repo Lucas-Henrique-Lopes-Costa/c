@@ -37,10 +37,10 @@ struct Carros
   float consumo;
 };
 
-void informacoes(Carros carro[], ofstream &arquivoOut)
+void informacoes(Carros *carro, ofstream &arquivoOut)
 {
-  arquivoOut << carro[0].consumo << endl;
-  arquivoOut << carro[0].distancia / carro[0].consumo << endl;
+  arquivoOut << carro->consumo << endl;
+  arquivoOut << carro->distancia / carro->consumo << endl;
 }
 
 int main()
@@ -48,10 +48,10 @@ int main()
   ifstream arquivoIn("entrada.txt");
   ofstream arquivoOut("saida.txt");
   
-  Carros *carro = new Carros[1];
-  arquivoIn >> carro[0].marca >> carro[0].ano >> carro[0].distancia >> carro[0].consumo;
+  Carros *carro = new Carros;
+  arquivoIn >> carro->marca >> carro->ano >> carro->distancia >> carro->consumo;
 
-  arquivoOut << carro[0].marca << endl << carro[0].ano << endl;
+  arquivoOut << carro->marca << endl << carro->ano << endl;
   informacoes(carro, arquivoOut);
 
   return 0;
