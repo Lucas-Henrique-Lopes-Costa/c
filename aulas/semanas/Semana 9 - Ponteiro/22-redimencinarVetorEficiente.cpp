@@ -12,9 +12,11 @@ int main()
   int *temp = new int[150]; // Vetor temporário
   // Copia os elementos do vetor original para o temporário
   memcpy(temp, ptrVetor, 100 * sizeof(int));
+  // para onde vai, de onde vem, quantos vamos copiar de onde vem
 
   // ou
-  // copy(ptrVetor, ptrVetor + 100, temp);
+  copy(ptrVetor, ptrVetor + 100, temp);
+  // onde começa, onde termina, para onde vai
 
   delete[] ptrVetor; // Libera o vetor original
 
