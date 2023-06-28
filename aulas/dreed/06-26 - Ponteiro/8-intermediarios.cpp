@@ -30,46 +30,74 @@ Exemplo de saída:
 4 2
 */
 #include <iostream>
+#include <algorithm>
 using namespace std;
 
 int main()
 {
-  int n, a, b, i, j;
+  int n;
   cin >> n;
 
   int *numeros = new int[n];
 
-  for (i = 0; i < n; i++)
+  for (int i = 0; i < n; i++)
     cin >> numeros[i];
 
+  int a, b;
   cin >> a >> b;
 
-  if (a > b)
+  int indexInicio;
+  bool encontrouInicio = false;
+
+  int i = 0;
+  while (encontrouInicio == false)
   {
-    int aux = a;
-    a = b;
-    b = aux;
+    if (numeros[i] == a || numeros[i] == b)
+    {
+      indexInicio = i;
+      encontrouInicio = true;
+    }
+    i++;
   }
 
-  for (i = 0; i < n; i++)
+  int indexFim;
+  bool encontrouFinal = false;
+
+  i = indexInicio + 1;
+  while (encontrouFinal == false)
   {
-    bool encontrou = false;
-    if (numeros[i] == a and !encontrou)
+    if (numeros[i] == a || numeros[i] == b)
     {
-      for (j = i + 1; j < n; j++)
-      {
-        bool encontrou = false;
-        if (numeros[j] == b and !encontrou)
-        {
-          for (int k = j - 1; k > i; k--)
-            cout << numeros[k] << " ";
-          cout << endl;
-          encontrou = true;
-        }
-      }
-      encontrou = true;
+      indexFim = i;
+      encontrouFinal = true;
     }
+    i++;
   }
+
+  // redimencionando vetor
+  int *vetor = new int[indexFim - indexInicio - 1];
+
+  int j = 0;
+  for (int i = indexInicio + 1; i < indexFim; i++)
+  {
+    vetor[j] = numeros[i];
+    j++;
+  }
+
+  delete[] numeros;
+
+  // invertendo vetor
+  for (int i = 0; i < j / 2; i++)
+  {
+    int aux = vetor[i];
+    vetor[i] = vetor[j - i - 1];
+    vetor[j - i - 1] = aux;
+  }
+
+  for (int i = 0; i < j; i++)
+    cout << vetor[i] << " ";
+
+  cout << endl;
 
   return 0;
 }
