@@ -6,13 +6,14 @@ int main()
   int K, N = 10;
   int V[N];
 
-  int i, posicao = -1;
-  for (i = 0; i < N; i++)
+  int posicao = -1;
+  for (int i = 0; i < N; i++)
   {
     cin >> V[i];
   }
 
   cin >> K;
+  int i = 0;
   while ((i < N) and (V[i] != K))
   {
     i++;

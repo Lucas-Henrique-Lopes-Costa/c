@@ -20,52 +20,29 @@ Exemplo de Saída:
 q w e r t y u i o p m n b v c x z
 */
 #include <iostream>
+#include <cstring>
 #include <algorithm>
 using namespace std;
 
 int main()
 {
-  int tamanho = 5;
-  int *vetor = new int[tamanho];
+  char *vetor1 = new char[100];
+  char *vetor2 = new char[100]; 
 
-  int transformacoes = 0;
+  cin.getline(vetor1, 100);
+  cin.getline(vetor2, 100);
 
-  int numero;
-  cin >> numero;
-  int index = 0;
+  int tam1 = strlen(vetor1);
+  int tam2 = strlen(vetor2);
 
-  while (numero > 0)
-  {
-    vetor[index] = numero;
+  char *vetor3 = new char[tam1 + tam2 + 1];
 
-    index++;
+  copy(vetor1, vetor1 + tam1, vetor3);
+  vetor3[tam1] = ' ';
+  copy(vetor2, vetor2 + tam2, vetor3 + tam1 + 1);
 
-    if (index == tamanho)
-    {
-      int *novoVetor = new int[tamanho + 5];
-
-      for (int i = 0; i < tamanho; i++)
-        novoVetor[i] = vetor[i];
-
-      delete[] vetor;
-
-      vetor = novoVetor;
-
-      tamanho += 5;
-
-      transformacoes++;
-    }
-
-    cin >> numero;
-  }
-
-  for (int i = 0; i < index; i++)
-    cout << vetor[i] << " ";
-
-  cout << endl;
-
-  cout << tamanho << endl;
-  cout << transformacoes << endl;
+  for (int i = 0; i < tam1 + tam2 + 1; i++)
+    cout << vetor3[i];
 
   return 0;
 }
