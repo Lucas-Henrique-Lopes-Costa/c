@@ -13,11 +13,14 @@ int main()
   }
 
   cin >> K;
+
   int i = 0;
-  while ((i < N) and (V[i] != K))
+  while ((i < N) && (V[i] != K))
   {
     i++;
   }
+
+  cout << i << endl;
 
   if (i != N)
   {

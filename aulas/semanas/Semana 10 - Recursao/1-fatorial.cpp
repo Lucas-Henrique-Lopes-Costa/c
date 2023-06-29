@@ -4,7 +4,6 @@ using namespace std;
 int fatorial(int N)
 {
   if (N == 0)
-  if (N == 0)
   {
     return 1;
   }
