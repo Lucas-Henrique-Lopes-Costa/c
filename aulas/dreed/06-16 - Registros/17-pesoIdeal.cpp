@@ -58,7 +58,7 @@ int main()
     }
   }
 
-  cout << maisPesado << endl;
+  cout << nomeMaisPesado << endl;
 
   // peso ideal
   for (int i = 0; i < n; i++)

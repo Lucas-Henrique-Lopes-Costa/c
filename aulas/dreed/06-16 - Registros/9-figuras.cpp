@@ -65,69 +65,66 @@ struct Retangulo
   double area;
 };
 
+struct Respostas
+{
+  string nome;
+  double perimetro;
+  double area;
+};
+
+
 int main()
 {
   int i;
   char tipo;
 
-  Circulo c[5];
-  int contC = 0;
-
-  Triangulo t[5];
-  int contT = 0;
-
-  Retangulo r[5];
-  int contR = 0;
+  Respostas respostas[5];
 
   for (i = 0; i < 5; i++)
   {
     cin >> tipo;
-    switch (tipo)
-    {
-    case 'C':
-    {
-      cin >> c[contC].raio;
-      c[contC].perimetro = 2 * M_PI * c[contC].raio;
-      c[contC].area = M_PI * pow(c[contC].raio, 2);
-      contC++;
-      break;
-    }
-    case 'T':
-    {
-      cin >> t[contT].lado1 >> t[contT].lado2 >> t[contT].lado3;
-      t[contT].perimetro = t[contT].lado1 + t[contT].lado2 + t[contT].lado3;
-      double p = t[contT].perimetro / 2;
-      t[contT].area = sqrt(p * (p - t[contT].lado1) * (p - t[contT].lado2) * (p - t[contT].lado3));
-      contT++;
-      break;
-    }
-    case 'R':
-    {
-      cin >> r[contR].base >> r[contR].altura;
-      r[contR].perimetro = 2 * (r[contR].base + r[contR].altura);
-      r[contR].area = r[contR].base * r[contR].altura;
-      contR++;
-      break;
-    }
 
-    default:
-      break;
+    if (tipo == 'C')
+    {
+      Circulo circulo;
+      cin >> circulo.raio;
+
+      circulo.perimetro = 2 * M_PI * circulo.raio;
+      circulo.area = M_PI * pow(circulo.raio, 2);
+
+      respostas[i].nome = "Circulo";
+      respostas[i].perimetro = circulo.perimetro;
+      respostas[i].area = circulo.area;
+    }
+    else if (tipo == 'T')
+    {
+      Triangulo triangulo;
+      cin >> triangulo.lado1 >> triangulo.lado2 >> triangulo.lado3;
+
+      triangulo.perimetro = triangulo.lado1 + triangulo.lado2 + triangulo.lado3;
+      triangulo.area = sqrt(triangulo.perimetro / 2 * (triangulo.perimetro / 2 - triangulo.lado1) * (triangulo.perimetro / 2 - triangulo.lado2) * (triangulo.perimetro / 2 - triangulo.lado3));
+
+      respostas[i].nome = "Triangulo";
+      respostas[i].perimetro = triangulo.perimetro;
+      respostas[i].area = triangulo.area;
+    }
+    else if (tipo == 'R')
+    {
+      Retangulo retangulo;
+      cin >> retangulo.base >> retangulo.altura;
+
+      retangulo.perimetro = 2 * (retangulo.base + retangulo.altura);
+      retangulo.area = retangulo.base * retangulo.altura;
+
+      respostas[i].nome = "Retangulo";
+      respostas[i].perimetro = retangulo.perimetro;
+      respostas[i].area = retangulo.area;
     }
   }
 
-  for (i = 0; i < contC; i++)
+  for (i = 0; i < 5; i++)
   {
-    cout << "Circulo " << fixed << setprecision(4) << c[i].perimetro << " " << c[i].area << endl;
-  }
-
-  for (i = 0; i < contT; i++)
-  {
-    cout << "Triangulo " << fixed << setprecision(4) << t[i].perimetro << " " << t[i].area << endl;
-  }
-
-  for (i = 0; i < contR; i++)
-  {
-    cout << "Retangulo " << fixed << setprecision(4) << r[i].perimetro << " " << r[i].area << endl;
+    cout << respostas[i].nome << " " << respostas[i].perimetro << " " << respostas[i].area << endl;
   }
 
   return 0;

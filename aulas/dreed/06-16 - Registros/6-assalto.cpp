@@ -43,7 +43,6 @@ ElDorado 105
 DeNovo 150
 EMinha 300
 */
-
 #include <iostream>
 using namespace std;
 
@@ -86,33 +85,24 @@ int main()
   cin >> alvo;
 
   // achar os nomes do vilão que vai assaltar o alvo
-  string nomesViloes[assaltos];
-  int contador = 0;
+  int cont = 0;
 
   for (int i = 0; i < n; i++)
   {
     if (viloes[i].alvo == alvo)
     {
-      nomesViloes[contador] = viloes[i].nome;
-      contador++;
-    }
-  }
-
-  // verificar em quais dos assaltos tem o vilão e imprimir o nome do plano e o prejuízo
-  bool temAssalto = false;
-  for (int i = 0; i < assaltos; i++)
-  {
-    for (int j = 0; j < contador; j++)
-    {
-      if (planos[i].nomeVilao == nomesViloes[j])
+      for (int j = 0; j < assaltos; j++)
       {
-        cout << planos[i].nomePlano << " " << planos[i].prejuizo << endl;
-        temAssalto = true;
+        if (planos[j].nomeVilao == viloes[i].nome)
+        {
+          cout << planos[j].nomePlano << " " << planos[j].prejuizo << endl;
+          cont++;
+        }
       }
     }
   }
 
-  if (!temAssalto)
+  if (cont == 0)
   {
     cout << -1 << endl;
   }
