@@ -34,81 +34,42 @@ int main()
   for (int i = 0; i < n; i++)
     cin >> vetor[i];
 
-  // achando o indice do segundo maior e do segundo menor
-  int indiceSegundoMaior = 0;
+  int menor, maior;
 
-  float A;
-  float B;
+  for (int i = 0; i < n; i++)
+  {
+    int contMaiores = 0, contMenores = 0;
 
-  if (vetor[0] > vetor[1])
-  {
-    A = vetor[0];
-    B = vetor[1];
-  }
-  else
-  {
-    A = vetor[1];
-    B = vetor[0];
-  }
-
-  for (int i = 2; i < n; i++)
-  {
-    if (vetor[i] > A)
+    for (int j = 0; j < n; j++)
     {
-      B = A;
-      A = vetor[i];
-      indiceSegundoMaior = i;
+      if (vetor[i] > vetor[j])
+        contMaiores++;
+      if (vetor[i] < vetor[j])
+        contMenores++;
     }
-    else if (vetor[i] > B)
-    {
-      B = vetor[i];
-      indiceSegundoMaior = i;
-    }
+
+    if (contMaiores == n - 2) // Se o elemento for o segundo maior
+      maior = i;
+
+    if (contMenores == n - 2) // Se o elemento for o segundo menor
+      menor = i;
   }
 
-  // cout << "Segundo maior: " << vetor[indiceSegundoMaior] << endl;
-
-  int indiceSegundoMenor = 0;
-
-  if (vetor[0] < vetor[1])
+  float *novoVetor = new float[n - 2];
+  int j = 0;
+  for (int i = 0; i < n; i++)
   {
-    A = vetor[0];
-    B = vetor[1];
-  }
-  else
-  {
-    A = vetor[1];
-    B = vetor[0];
-  }
-
-  for (int i = 2; i < n; i++)
-  {
-    if (vetor[i] < A)
+    if (i != menor && i != maior)
     {
-      B = A;
-      A = vetor[i];
-      indiceSegundoMenor = i;
-    }
-    else if (vetor[i] < B)
-    {
-      B = vetor[i];
-      indiceSegundoMenor = i;
+      novoVetor[j] = vetor[i];
+      j++;
     }
   }
 
-  // cout << "Segundo menor: " << vetor[indiceSegundoMenor] << endl;
+  for (int i = 0; i < n - 2; i++)
+    cout << novoVetor[i] << endl;
 
-  // imprimindo apenas os que não são o segundo maior e o segundo menor
-  if (n > 2)
-  {
-    for (int i = 0; i < n; i++)
-    {
-      if (i != indiceSegundoMaior and i != indiceSegundoMenor)
-      {
-        cout << vetor[i] << endl;
-      }
-    }
-  }
+  delete[] vetor;
 
   return 0;
 }

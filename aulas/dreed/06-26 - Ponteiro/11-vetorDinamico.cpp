@@ -25,49 +25,47 @@ Exemplo de Saída:
 #include <algorithm>
 using namespace std;
 
+void verificaCapacidade(int *&vetor, int &tamanho, int index, int &transformacoes)
+{
+  if (index == tamanho)
+  {
+    int *novoVetor = new int[tamanho + 5];
+
+    for (int i = 0; i < tamanho; i++)
+      novoVetor[i] = vetor[i];
+
+    delete[] vetor;
+    vetor = novoVetor;
+    tamanho += 5;
+    transformacoes++;
+  }
+}
+
 int main()
 {
   int tamanho = 5;
   int *vetor = new int[tamanho];
 
+  int numero;
+  int index = 0;
   int transformacoes = 0;
 
-  int numero;
   cin >> numero;
-  int index = 0;
 
   while (numero > 0)
   {
+    verificaCapacidade(vetor, tamanho, index, transformacoes);
     vetor[index] = numero;
-
     index++;
-
-    if (index == tamanho)
-    {
-      int *novoVetor = new int[tamanho + 5];
-
-      for (int i = 0; i < tamanho; i++)
-        novoVetor[i] = vetor[i];
-
-      delete[] vetor;
-
-      vetor = novoVetor;
-
-      tamanho += 5;
-
-      transformacoes++;
-    }
-
     cin >> numero;
   }
 
   for (int i = 0; i < index; i++)
     cout << vetor[i] << " ";
 
-  cout << endl;
-
-  cout << tamanho << endl;
-  cout << transformacoes << endl;
+  cout << endl
+       << tamanho << endl
+       << transformacoes << endl;
 
   return 0;
 }
