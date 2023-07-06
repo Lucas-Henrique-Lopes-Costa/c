@@ -1,104 +1,135 @@
+/*
+Faça um programa que cadastre o sobrenome e as idades de famílias de 3 membros cada (idade do pai, da mãe e do filho). Os dados devem ser lidos em um arranjo alocado dinamicamente, inicialmente com tamanho 3. A leitura deve ser encerrada quando for lida a palavra FIM como nome da familia. Após o término da leitura dos dados, identifique os casais que possuem filhos de mesma idade e armazene os sobrenomes das famílias envolvidas na igualdade. Caso não haja correspondentes, deve ser impressa a mensagem NENHUM.
+
+Restrições adicionais:
+* As idades dos membros de uma família devem ser armazenadas em um registro.
+** O tamanho inicial do vetor a ser utilizado é 3 e devem ser acrescentadas 3 posições a cada redimensionamento.
+
+Entradas:
+
+Conjunto de sobrenomes e idades das famílias
+Saídas:
+
+Tamanho do vetor a cada redimensionamento do vetor de entrada.
+Sobrenome das famílias com filhos de mesma idade.
+Entradas:
+Silva 44 41 17
+Araujo 54 49 19
+Pires 25 30 4
+Correia 29 27 19
+Paulino 60 65 19
+Moreira 29 28 4
+Matos 42 41 14
+FIM
+
+Saídas:
+6
+9
+Araujo
+Correia
+Paulino
+Pires
+Moreira
+
+Entradas:
+
+Castro 44 41 17
+Gomes 38 36 15
+Perez 44 49 19
+FIM
+
+Saídas:
+NENHUM
+
+
+Entradas:
+Xavier 50 41 10
+Salles 58 56 20
+Geraldi 44 49 10
+Torres 44 49 20
+FIM
+
+Saídas:
+6
+Xavier
+Geraldi
+Salles
+Torres
+*/
 #include <iostream>
+#include <cstring>
 using namespace std;
 
-struct idades
+struct Familias
 {
-  string nome;
-  int idade_pai, idade_mae, idade_filho;
+  string sobrenome;
+  int idadePai, idadeMae, idadeFilho;
+  bool igual, jaImprimiu;
 };
 
 int main()
 {
-  int capacidade = 3;
-  idades *familias = NULL;
-  familias = new idades[capacidade];
+  int tamanho = 3;
+  Familias *familia = new Familias[tamanho];
 
-  bool fim = true;
-  int i = 0;
-  string verifica;
-  int *alocacao;
-  int tam1 = 0;
-  while (fim)
+  string sobrenome;
+  int idadePai, idadeMae, idadeFilho;
+
+  int contFamilias = 0;
+  while (cin >> sobrenome && sobrenome != "FIM")
   {
-    cin >> verifica;
-    if (verifica != "FIM")
+    cin >> idadePai >> idadeMae >> idadeFilho;
+
+    if (contFamilias == tamanho)
     {
-      if (i == capacidade)
-      {
-        idades *novo = new idades[capacidade + 3];
-        copy(familias, familias + capacidade, novo);
-        delete[] familias;
-        familias = novo;
-        capacidade += 3;
-        if (tam1 == 0)
-        {
-          alocacao = new int[tam1 + 1];
-          alocacao[tam1] = capacidade;
-          tam1++;
-        }
-        else
-        {
-          int *aux = new int[tam1 + 1];
-          copy(alocacao, alocacao + tam1, aux);
-          delete[] alocacao;
-          alocacao = aux;
-          alocacao[tam1] = capacidade;
-          tam1++;
-        }
-      }
-      familias[i].nome = verifica;
-      cin >> familias[i].idade_pai >> familias[i].idade_mae >> familias[i].idade_filho;
-      i++;
+      tamanho += 3;
+      Familias *aux = new Familias[tamanho];
+      copy(familia, familia + contFamilias, aux);
+
+      delete[] familia;
+      familia = aux;
+
+      cout << tamanho << endl;
     }
-    else
-    {
-      fim = false;
-    }
+
+    familia[contFamilias].sobrenome = sobrenome;
+    familia[contFamilias].idadePai = idadePai;
+    familia[contFamilias].idadeMae = idadeMae;
+    familia[contFamilias].idadeFilho = idadeFilho;
+
+    contFamilias++;
   }
 
-  if (tam1 != 0)
-    for (int y = 0; y < tam1; y++)
-      cout << alocacao[y] << endl;
-
-  string *iguais;
-  int tam = 0;
-  int cont = 0;
-  for (int y = 0; y < i; y++)
+  for (int i = 0; i < contFamilias; i++)
   {
-    cont = 0;
-    for (int j = 0; j < i; j++)
+    familia[i].igual = false;
+    familia[i].jaImprimiu = false;
+  }
+
+  int f = 0;
+  for (int i = 0; i < contFamilias; i++)
+  {
+    for (int j = 0; j < contFamilias; j++)
     {
-      if (familias[y].idade_filho == familias[j].idade_filho)
+      if ((i != j) && (familia[i].idadeFilho == familia[j].idadeFilho))
       {
-        cont++;
+        familia[i].igual = true;
+        familia[j].igual = true;
       }
     }
-    if (cont > 1)
+
+    for (int k = 0; k < contFamilias; k++)
     {
-      if (tam == 0)
+      if (familia[k].igual && !familia[k].jaImprimiu)
       {
-        iguais = new string[tam + 1];
-        iguais[tam] = familias[y].nome;
-        tam++;
-      }
-      else
-      {
-        string *novo = new string[tam + 1];
-        copy(iguais, iguais + tam, novo);
-        delete[] iguais;
-        iguais = novo;
-        tam++;
-        iguais[tam - 1] = familias[y].nome;
+        cout << familia[k].sobrenome << endl;
+        familia[k].jaImprimiu = true;
+        f++;
       }
     }
   }
 
-  if (tam != 0)
-  {
-    for (int y = 0; y < tam; y++)
-      cout << iguais[y] << endl;
-  }
-  else
+  if (f == 0)
   {
     cout << "NENHUM" << endl;
   }
