@@ -1,25 +1,59 @@
 #include <sstream>
+#include <fstream>
 #include <iostream>
 using namespace std;
 
+struct Alunos
+{
+  char nome[20];
+  int matricula;
+  float nota[4];
+  float media;
+};
+
 int main()
 {
-  stringstream buffer; // buffer de string
-  string texto;
+  cout << sizeof(Alunos) << endl;
 
-  cin >> texto;
-  buffer.str(texto); // buffer recebe texto
+  Alunos aluno[3];
+  float soma;
 
-  int x;
-  buffer >> x; // buffer recebe x
-  x *= 2; // dobra x
-  cout << x << endl;
+  ifstream arq("dados.dat");
+  ofstream saidaA("medias.txt");
+  ofstream saidaB("dadosbin.dat");
 
-  buffer.clear(); // limpa o buffer
+  // recebendo os alunos
+  for (int i = 0; i < 3; i++)
+  {
+    arq >> aluno[i].nome;
+    arq >> aluno[i].matricula;
 
-  buffer << texto << " " << x << " " << x * 3;
-  texto = buffer.str();
-  cout << texto << endl;
+    soma = 0;
+
+    for (int j = 0; j < 4; j++)
+    {
+      arq >> aluno[i].nota[j];
+      soma += aluno[i].nota[j];
+    }
+
+    aluno[i].media = soma / 4;
+  }
   
+  // salvando dados em formato binário
+  for (int i = 0; i < 3; i++)
+  {
+    saidaB.write((char *) &aluno[i], sizeof(Alunos));
+    // (char *) => cast para char
+    // &aluno[i] => endereço de memória do aluno
+    // sizeof(Alunos) => tamanho do aluno    
+  }
+
+  // imprimindo alunos
+  for (int i = 0; i < 3; i++)
+  {
+    saidaA << aluno[i].nome << " ";
+    saidaA << aluno[i].media << endl;
+  }
+
   return 0;
 }

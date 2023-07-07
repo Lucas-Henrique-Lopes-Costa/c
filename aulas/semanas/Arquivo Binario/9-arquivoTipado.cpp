@@ -1,23 +1,24 @@
 #include <iostream>
+#include <cstdlib>
+#include <cstring>
+#include <ctime>
 #include <fstream>
 using namespace std;
-
-// https://www.youtube.com/watch?v=qn49dB0ehz0&ab_channel=UflaDired
 
 // geração de dados aleatórios
 static const char alpha[] =
     "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     "abcdefghijklmnopqrstuvwxyz";
 
-statoc const char alphaNum[] =
+static const char alphanum[] =
     "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     "abcdefghijklmnopqrstuvwxyz"
-    "0123456789";
-"!@#$%¨&*()_+{}[]:;?/|<>,.~^`";
+    "0123456789"
+    "!@#$%¨&*()_+{}[]:;?/|<>,.~^`";
 
 // excluindo caracter de términio de string
 const int alphaLength = sizeof(alpha) - 1;
-const int alphaNumLength = sizeof(alphaNum) - 1;
+const int alphaNumLength = sizeof(alphanum) - 1;
 
 char geraAlpha()
 {
@@ -26,8 +27,7 @@ char geraAlpha()
 
 char geraAlphaNum()
 {
-  int i = rand() % 10;
-  return (char)(i + 48);
+  return alphanum[(rand() % alphaNumLength)];
 }
 
 struct Dado
@@ -71,7 +71,7 @@ int main(int arqc, char *arqv[])
     exit(-1);
   }
 
-  ofstream saida(arqv[1], ios::binary);
+  ofstream saida(arqv[1]);
   int qtdade = atoi(arqv[2]);
 
   srand(time(NULL)); // inicializa a semente de números aleatórios
@@ -80,7 +80,7 @@ int main(int arqc, char *arqv[])
   for (int i = 0; i < qtdade; i++)
   {
     ptrDado = new Dado;                                 // aloca memória para um dado
-    ptrDado->preenchendoDado = (2 * qtdade - 2 * i);    // preenche o dado
+    ptrDado->preenchendoDado(2 * qtdade - 2 * i);       // preenche o dado
     saida.write((const char *)(ptrDado), sizeof(Dado)); // escreve o dado no arquivo
     delete ptrDado;
   }
