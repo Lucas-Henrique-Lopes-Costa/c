@@ -1,0 +1,101 @@
+Indentificador;Nome;Preco;Quantidade;Fabricante;Ano de criacao;Descricao do produto
+1;iPhone 12;799.99;50;Apple;2020;O iPhone 12 e um smartphone poderoso, com processador A14 Bionic, camera dupla de 12MP, tela Super Retina XDR de 6,1 polegadas e suporte para 5G.
+2;Samsung Galaxy S21;899.99;30;Samsung;2021;O Samsung Galaxy S21 e um smartphone topo de linha, com processador Exynos 2100, camera tripla de 12MP, tela Dynamic AMOLED 2X de 6,2 polegadas e suporte para 5G.
+3;3Google Pixel 5;699.99;20;Google;2020;O Google Pixel 5 e um smartphone com camera de 12,2MP, tela OLED de 6 polegadas, processador Snapdragon 765G e integracao com os servicos do Google.
+4;OnePlus 9 Pro;899.99;15;OnePlus;2021;O OnePlus 9 Pro e um smartphone com camera Hasselblad de 48MP, tela Fluid AMOLED de 6,7 polegadas, processador Snapdragon 888 e suporte para 5G.
+5;Xiaomi Mi 11;699.99;25;Xiaomi;2021;O Xiaomi Mi 11 e um smartphone com camera tripla de 108MP, tela AMOLED de 6,81 polegadas, processador Snapdragon 888 e carregamento rapido de 55W.
+6;Motorola Moto G Power;249.99;40;Motorola;2020;O Motorola Moto G Power e um smartphone com bateria de longa duracao, camera tripla de 16MP, tela Max Vision HD+ de 6,4 polegadas e processador Snapdragon 665.
+7;Sony Xperia 1 III;1199.99;10;Sony;2021;O Sony Xperia 1 III e um smartphone com camera ZEISS de 12MP, tela OLED de 6,5 polegadas, processador Snapdragon 888 e resistencia a agua e poeira.
+8;LG Velvet;499.99;15;LG;2020;O LG Velvet e um smartphone com camera tripla de 48MP, tela P-OLED de 6,8 polegadas, processador Snapdragon 765G e suporte para caneta stylus.
+9;Nokia 8.3 5G;699.99;10;Nokia;2020;O Nokia 8.3 5G e um smartphone com camera quad de 64MP, tela IPS LCD de 6,81 polegadas, processador Snapdragon 765G e suporte para 5G.
+10;Huawei P40 Pro;999.99;5;Huawei;2020;O Huawei P40 Pro e um smartphone com camera quad de 50MP, tela OLED de 6,58 polegadas, processador Kirin 990 5G e suporte para carregamento sem fio.
+11;Samsung Galaxy A52;399.99;40;Samsung;2021;O Samsung Galaxy A52 e um smartphone intermediario com camera quadrupla de 64MP, tela Super AMOLED de 6,5 polegadas, processador Snapdragon 720G e bateria de longa duracao.
+12;Xiaomi Redmi Note 10;249.99;30;Xiaomi;2021;O Xiaomi Redmi Note 10 e um smartphone acessivel com camera quadrupla de 48MP, tela AMOLED de 6,43 polegadas, processador Snapdragon 678 e carregamento rapido de 33W.
+13;Motorola Moto G30;199.99;25;Motorola;2021;O Motorola Moto G30 e um smartphone de entrada com camera quadrupla de 64MP, tela HD+ de 6,5 polegadas, processador Snapdragon 662 e bateria de longa duracao.
+14;iPhone SE (2020);399.99;20;Apple;2020;O iPhone SE (2020) e um smartphone compacto com processador A13 Bionic, camera de 12MP, tela Retina HD de 4,7 polegadas e suporte para carregamento sem fio.
+15;OnePlus Nord CE 5G;349.99;15;OnePlus;2021;O OnePlus Nord CE 5G e um smartphone com camera tripla de 64MP, tela AMOLED de 6,43 polegadas, processador Snapdragon 750G e suporte para 5G.
+16;Google Pixel 4a;349.99;20;Google;2020;O Google Pixel 4a e um smartphone com camera de 12,2MP, tela OLED de 5,81 polegadas, processador Snapdragon 730G e integracao com os servicos do Google.
+17;Sony Xperia 5 II;899.99;10;Sony;2020;O Sony Xperia 5 II e um smartphone com camera tripla de 12MP, tela OLED de 6,1 polegadas, processador Snapdragon 865 e resistencia a agua e poeira.
+18;LG K52;199.99;30;LG;2020;O LG K52 e um smartphone de entrada com camera quadrupla de 48MP, tela HD+ de 6,6 polegadas, processador MediaTek Helio P35 e bateria de longa duracao.
+19;Nokia 5.4;229.99;25;Nokia;2020;O Nokia 5.4 e um smartphone intermediario com camera quadrupla de 48MP, tela HD+ de 6,39 polegadas, processador Qualcomm Snapdragon 662 e Android puro.
+20;Huawei Nova 7i;299.99;15;Huawei;2020;O Huawei Nova 7i e um smartphone com camera quad de 48MP, tela IPS LCD de 6,4 polegadas, processador Kirin 810 e suporte para carregamento rapido.
+21;Samsung Galaxy S20 FE;699.99;30;Samsung;2020;O Samsung Galaxy S20 FE e um smartphone com camera tripla de 12MP, tela Super AMOLED de 6,5 polegadas, processador Exynos 990 e suporte para carregamento sem fio.
+22;Xiaomi Mi 11 Lite;349.99;25;Xiaomi;2021;O Xiaomi Mi 11 Lite e um smartphone leve e fino com camera tripla de 64MP, tela AMOLED de 6,55 polegadas, processador Snapdragon 732G e suporte para carregamento rapido.
+23;Motorola Moto G60;299.99;20;Motorola;2021;O Motorola Moto G60 e um smartphone com camera tripla de 108MP, tela IPS LCD de 6,8 polegadas, processador Snapdragon 732G e bateria de longa duracao.
+24;iPhone 13;999.99;15;Apple;2021;O iPhone 13 e um smartphone de ultima geracao com processador A15 Bionic, camera dupla de 12MP, tela Super Retina XDR de 6,1 polegadas e suporte para 5G.
+25;OnePlus 9;799.99;10;OnePlus;2021;O OnePlus 9 e um smartphone com camera tripla de 48MP, tela Fluid AMOLED de 6,55 polegadas, processador Snapdragon 888 e suporte para 5G.
+26;Google Pixel 6;899.99;15;Google;2022;O Google Pixel 6 e um smartphone com camera dupla de 50MP, tela OLED de 6,4 polegadas, processador Google Tensor e integracao aprimorada com os servicos do Google.
+27;Sony Xperia 10 III;599.99;10;Sony;2021;O Sony Xperia 10 III e um smartphone com camera tripla de 12MP, tela OLED de 6 polegadas, processador Snapdragon 690 e resistencia a agua e poeira.
+28;LG Wing;999.99;5;LG;2020;O LG Wing e um smartphone unico com tela giratoria, camera tripla de 64MP, tela OLED principal de 6,8 polegadas e tela secundaria de 3,9 polegadas.
+29;Nokia X20;399.99;20;Nokia;2021;O Nokia X20 e um smartphone com camera quadrupla de 64MP, tela IPS LCD de 6,67 polegadas, processador Qualcomm Snapdragon 480 5G e Android puro.
+30;Huawei Mate 40 Pro;1199.99;10;Huawei;2020;O Huawei Mate 40 Pro e um smartphone premium com camera tripla de 50MP, tela OLED de 6,76 polegadas, processador Kirin 9000 e suporte para carregamento sem fio.
+31;Samsung Galaxy Note 20 Ultra;1299.99;15;Samsung;2020;O Samsung Galaxy Note 20 Ultra e um smartphone premium com caneta S Pen, camera tripla de 108MP, tela Dynamic AMOLED de 6,9 polegadas e processador Exynos 990.
+32;Xiaomi Redmi 9;199.99;40;Xiaomi;2020;O Xiaomi Redmi 9 e um smartphone de entrada com camera quádrupla de 13MP, tela IPS LCD de 6,53 polegadas, processador MediaTek Helio G80 e bateria de longa duração.
+33;Motorola Edge+;999.99;10;Motorola;2020;O Motorola Edge+ e um smartphone com tela OLED cascata de 6,7 polegadas, camera tripla de 108MP, processador Snapdragon 865 e suporte para 5G.
+34;iPhone 13 Pro;1199.99;20;Apple;2021;O iPhone 13 Pro e um smartphone de alto desempenho com processador A15 Bionic, camera tripla de 12MP, tela Super Retina XDR de 6,1 polegadas e suporte para 5G.
+35;Google Pixel 5a;449.99;10;Google;2021;O Google Pixel 5a e um smartphone com camera dupla de 12,2MP, tela OLED de 6,34 polegadas, processador Snapdragon 765G e integração aprimorada com os serviços do Google.
+36;Sony Xperia 1 II;1099.99;10;Sony;2020;O Sony Xperia 1 II e um smartphone com camera tripla de 12MP, tela OLED de 6,5 polegadas, processador Snapdragon 865 e resistência a água e poeira.
+37;LG G8 ThinQ;799.99;5;LG;2019;O LG G8 ThinQ e um smartphone com câmera dupla de 12MP, tela OLED de 6,1 polegadas, processador Snapdragon 855 e tecnologia de reconhecimento de gestos.
+38;Nokia 7.2;299.99;20;Nokia;2019;O Nokia 7.2 e um smartphone com camera tripla de 48MP, tela IPS LCD de 6,3 polegadas, processador Qualcomm Snapdragon 660 e Android puro.
+39;Huawei P30 Pro;899.99;15;Huawei;2019;O Huawei P30 Pro e um smartphone com camera quádrupla de 40MP, tela OLED de 6,47 polegadas, processador Kirin 980 e suporte para carregamento sem fio.
+40;Samsung Galaxy A72;499.99;30;Samsung;2021;O Samsung Galaxy A72 e um smartphone intermediario com camera quádrupla de 64MP, tela Super AMOLED de 6,7 polegadas, processador Snapdragon 720G e bateria de longa duração.
+41;Xiaomi Redmi Note 10 Pro;349.99;25;Xiaomi;2021;O Xiaomi Redmi Note 10 Pro e um smartphone com camera quádrupla de 108MP, tela AMOLED de 6,67 polegadas, processador Snapdragon 732G e carregamento rápido de 33W.
+42;Motorola Moto G Power (2021);249.99;20;Motorola;2021;O Motorola Moto G Power (2021) e um smartphone com bateria de longa duração, camera tripla de 48MP, tela LCD de 6,6 polegadas e processador Snapdragon 662.
+43;iPhone 13 Mini;699.99;15;Apple;2021;O iPhone 13 Mini e um smartphone compacto com processador A15 Bionic, camera dupla de 12MP, tela Super Retina XDR de 5,4 polegadas e suporte para 5G.
+44;OnePlus Nord 2;399.99;10;OnePlus;2021;O OnePlus Nord 2 e um smartphone com camera tripla de 50MP, tela AMOLED de 6,43 polegadas, processador MediaTek Dimensity 1200 e suporte para 5G.
+45;Google Pixel 6 Pro;1299.99;15;Google;2022;O Google Pixel 6 Pro e um smartphone premium com camera tripla de 50MP, tela OLED de 6,7 polegadas, processador Google Tensor e integração aprimorada com os serviços do Google.
+46;Sony Xperia 5 III;1099.99;10;Sony;2021;O Sony Xperia 5 III e um smartphone com camera tripla de 12MP, tela OLED de 6,1 polegadas, processador Snapdragon 888 e resistência a água e poeira.
+47;LG Velvet 2 Pro;799.99;5;LG;2021;O LG Velvet 2 Pro e um smartphone com camera tripla de 64MP, tela P-OLED de 6,8 polegadas, processador Snapdragon 888 e suporte para caneta stylus.
+48;Nokia 6.3;299.99;20;Nokia;2022;O Nokia 6.3 e um smartphone com camera quadrupla de 48MP, tela IPS LCD de 6,5 polegadas, processador Qualcomm Snapdragon 675 e Android puro.
+49;Huawei Mate 30 Pro;999.99;10;Huawei;2019;O Huawei Mate 30 Pro e um smartphone com camera quádrupla de 40MP, tela OLED de 6,53 polegadas, processador Kirin 990 e suporte para carregamento sem fio.
+50;Samsung Galaxy Z Fold 3;1799.99;15;Samsung;2021;O Samsung Galaxy Z Fold 3 e um smartphone dobravel com tela externa de 6,2 polegadas e tela interna dobravel de 7,6 polegadas, camera tripla de 12MP, processador Snapdragon 888 e suporte para S Pen.
+51;Xiaomi Mi 11 Ultra;1199.99;10;Xiaomi;2021;O Xiaomi Mi 11 Ultra e um smartphone premium com camera tripla de 50MP, tela AMOLED de 6,81 polegadas, processador Snapdragon 888 e carregamento rapido de 67W.
+52;Motorola Edge S;599.99;20;Motorola;2021;O Motorola Edge S e um smartphone com camera quádrupla de 64MP, tela IPS LCD de 6,7 polegadas, processador Snapdragon 870 e suporte para 5G.
+53;iPhone 14 Pro Max;1499.99;10;Apple;2022;O iPhone 14 Pro Max e um smartphone de alto desempenho com processador A16 Bionic, camera tripla de 12MP, tela Super Retina XDR de 6,7 polegadas e suporte para 5G.
+54;OnePlus 10;999.99;15;OnePlus;2022;O OnePlus 10 e um smartphone com camera quádrupla de 64MP, tela Fluid AMOLED de 6,7 polegadas, processador Snapdragon 895 e suporte para 5G.
+55;Google Pixel 6a;349.99;10;Google;2022;O Google Pixel 6a e um smartphone com camera dupla de 12,2MP, tela OLED de 6,2 polegadas, processador Google Tensor e integração aprimorada com os serviços do Google.
+56;Sony Xperia 1 IV;1299.99;10;Sony;2022;O Sony Xperia 1 IV e um smartphone com camera tripla de 64MP, tela OLED de 6,5 polegadas, processador Snapdragon 898 e resistência a água e poeira.
+57;LG G9 ThinQ;899.99;5;LG;2022;O LG G9 ThinQ e um smartphone com camera tripla de 64MP, tela OLED de 6,5 polegadas, processador Snapdragon 898 e tecnologia de reconhecimento de gestos.
+58;Nokia X30;699.99;20;Nokia;2022;O Nokia X30 e um smartphone com camera quádrupla de 108MP, tela IPS LCD de 6,7 polegadas, processador Qualcomm Snapdragon 888 e Android puro.
+59;Huawei P50 Pro;1299.99;15;Huawei;2022;O Huawei P50 Pro e um smartphone premium com camera quádrupla de 50MP, tela OLED de 6,6 polegadas, processador Kirin 9000 e suporte para carregamento sem fio.
+60;LG V30;699.99;15;LG;2017;O LG V30 apresentou uma tela P-OLED de 6 polegadas, câmera dupla de 16MP, processador Snapdragon 835 e sistema operacional Android.
+61;Xiaomi Redmi Note 9;229.99;25;Xiaomi;2020;O Xiaomi Redmi Note 9 e um smartphone de entrada com camera quádrupla de 48MP, tela IPS LCD de 6,53 polegadas, processador MediaTek Helio G85 e bateria de longa duracao.
+62;Motorola Moto G Stylus;299.99;20;Motorola;2021;O Motorola Moto G Stylus e um smartphone com caneta stylus integrada, camera quádrupla de 48MP, tela LCD de 6,8 polegadas e processador Snapdragon 678.
+63;OnePlus 8T;699.99;10;OnePlus;2020;O OnePlus 8T e um smartphone com camera quádrupla de 48MP, tela Fluid AMOLED de 6,55 polegadas, processador Snapdragon 865 e suporte para 5G.
+64;Google Pixel 5;699.99;15;Google;2020;O Google Pixel 5 e um smartphone com camera dupla de 12,2MP, tela OLED de 6 polegadas, processador Snapdragon 765G e integracao aprimorada com os servicos do Google.
+65;Sony Xperia 10 II;399.99;10;Sony;2020;O Sony Xperia 10 II e um smartphone com camera tripla de 12MP, tela OLED de 6 polegadas, processador Snapdragon 665 e resistencia a agua e poeira.
+66;LG V60 ThinQ;799.99;5;LG;2020;O LG V60 ThinQ e um smartphone com camera quádrupla de 64MP, tela P-OLED de 6,8 polegadas, processador Snapdragon 865 e suporte para caneta stylus.
+67;Nokia 8.3;499.99;20;Nokia;2020;O Nokia 8.3 e um smartphone com camera quádrupla de 64MP, tela IPS LCD de 6,81 polegadas, processador Qualcomm Snapdragon 765G e Android puro.
+68;Huawei Nova 7;599.99;15;Huawei;2020;O Huawei Nova 7 e um smartphone com camera quádrupla de 64MP, tela OLED de 6,53 polegadas, processador Kirin 985 e suporte para 5G.
+69;Samsung Galaxy S;599.99;10;Samsung;2010;O Samsung Galaxy S foi um dos primeiros smartphones com tela Super AMOLED de 4 polegadas, camera de 5MP, processador Hummingbird e sistema operacional Android.
+70;iPhone 4;699.99;15;Apple;2010;O iPhone 4 foi um marco na linha de smartphones da Apple, apresentando um design elegante com vidro na frente e atras, tela Retina de 3,5 polegadas, camera de 5MP e processador A4.
+71;Motorola Droid X;399.99;20;Motorola;2010;O Motorola Droid X foi um smartphone popular com tela TFT de 4,3 polegadas, camera de 8MP, processador TI OMAP e sistema operacional Android.
+72;HTC Evo 4G;499.99;10;HTC;2010;O HTC Evo 4G foi um dos primeiros smartphones com suporte para rede 4G, tela TFT de 4,3 polegadas, camera de 8MP, processador Snapdragon e sistema operacional Android.
+73;Nokia N8;299.99;25;Nokia;2010;O Nokia N8 foi um smartphone com camera de 12MP, tela AMOLED de 3,5 polegadas, processador ARM 11 e sistema operacional Symbian^3.
+74;BlackBerry Torch 9800;399.99;15;BlackBerry;2010;O BlackBerry Torch 9800 combinou um teclado fisico deslizante com uma tela sensivel ao toque, camera de 5MP, processador Qualcomm Snapdragon e sistema operacional BlackBerry OS 6.
+75;Sony Ericsson Xperia X10;249.99;20;Sony;2010;O Sony Ericsson Xperia X10 apresentou uma tela TFT de 4 polegadas, camera de 8MP, processador Qualcomm Snapdragon e sistema operacional Android.
+76;LG Optimus 7;199.99;30;LG;2010;O LG Optimus 7 foi um smartphone com tela TFT de 3,8 polegadas, camera de 5MP, processador Qualcomm Snapdragon e sistema operacional Windows Phone 7.
+77;HTC Desire;299.99;25;HTC;2010;O HTC Desire foi um smartphone com tela AMOLED de 3,7 polegadas, camera de 5MP, processador Qualcomm Snapdragon e sistema operacional Android.
+78;Samsung Wave S8500;199.99;30;Samsung;2010;O Samsung Wave S8500 foi um smartphone com tela Super AMOLED de 3,3 polegadas, camera de 5MP, processador Samsung S5PC110 e sistema operacional Bada.
+79;Google Pixel 2;649.99;10;Google;2017;O Google Pixel 2 trouxe melhorias na câmera e integração aprimorada com os serviços do Google, com uma tela AMOLED de 5 polegadas, câmera de 12,2MP, processador Snapdragon 835.
+80;Samsung Galaxy S6;699.99;30;Samsung;2015;O Samsung Galaxy S6 foi um smartphone premium com tela Super AMOLED de 5,1 polegadas, camera de 16MP, processador Exynos 7420 e sistema operacional Android.
+81;iPhone 6s;799.99;25;Apple;2015;O iPhone 6s trouxe recursos inovadores, como o 3D Touch, tela Retina HD de 4,7 polegadas, camera de 12MP, processador A9 e sistema operacional iOS.
+82;Motorola Moto X Style;449.99;20;Motorola;2015;O Motorola Moto X Style ofereceu uma tela LCD de 5,7 polegadas, camera de 21MP, processador Snapdragon 808 e sistema operacional Android.
+83;HTC One M9;599.99;15;HTC;2015;O HTC One M9 continuou a linha de design elegante da HTC, com uma tela Super LCD de 5 polegadas, camera de 20MP, processador Snapdragon 810 e sistema operacional Android.
+84;Nokia Lumia 950;349.99;10;Nokia;2015;O Nokia Lumia 950 foi um smartphone com tela AMOLED de 5,2 polegadas, camera de 20MP, processador Snapdragon 808 e sistema operacional Windows 10 Mobile.
+85;LG G4;499.99;15;LG;2015;O LG G4 apresentou uma tela IPS LCD de 5,5 polegadas, camera de 16MP, processador Snapdragon 808 e sistema operacional Android.
+86;Sony Xperia Z5;599.99;10;Sony;2015;O Sony Xperia Z5 foi um smartphone resistente a agua com uma tela IPS LCD de 5,2 polegadas, camera de 23MP, processador Snapdragon 810 e sistema operacional Android.
+87;BlackBerry Priv;699.99;5;BlackBerry;2015;O BlackBerry Priv trouxe o teclado fisico deslizante de volta, junto com uma tela AMOLED de 5,4 polegadas, camera de 18MP, processador Snapdragon 808 e sistema operacional Android.
+88;Xiaomi Mi 5;349.99;20;Xiaomi;2015;O Xiaomi Mi 5 foi um smartphone com tela IPS LCD de 5,15 polegadas, camera de 16MP, processador Snapdragon 820 e sistema operacional Android.
+89;Huawei P8;399.99;15;Huawei;2015;O Huawei P8 apresentou uma tela IPS-NEO LCD de 5,2 polegadas, camera de 13MP, processador Kirin 930 e sistema operacional Android.
+90;Samsung Galaxy S7;699.99;30;Samsung;2016;O Samsung Galaxy S7 foi um smartphone premium com tela Super AMOLED de 5,1 polegadas, camera de 12MP, processador Exynos 8890 e sistema operacional Android.
+91;iPhone 7;799.99;25;Apple;2016;O iPhone 7 trouxe melhorias significativas, incluindo resistencia a agua, camera de 12MP, processador A10 Fusion e sistema operacional iOS.
+92;Motorola Moto Z;499.99;20;Motorola;2016;O Motorola Moto Z foi um smartphone modular com tela AMOLED de 5,5 polegadas, camera de 13MP, processador Snapdragon 820 e sistema operacional Android.
+93;HTC 10;599.99;15;HTC;2016;O HTC 10 apresentou uma tela Super LCD de 5,2 polegadas, camera de 12MP, processador Snapdragon 820 e sistema operacional Android.
+94;Nokia Lumia 950 XL;449.99;10;Nokia;2016;O Nokia Lumia 950 XL foi um smartphone com tela AMOLED de 5,7 polegadas, camera de 20MP, processador Snapdragon 810 e sistema operacional Windows 10 Mobile.
+95;LG G5;499.99;15;LG;2016;O LG G5 trouxe um design modular inovador, juntamente com uma tela IPS LCD de 5,3 polegadas, camera de 16MP, processador Snapdragon 820 e sistema operacional Android.
+96;Sony Xperia XZ;599.99;10;Sony;2016;O Sony Xperia XZ foi um smartphone com tela IPS LCD de 5,2 polegadas, camera de 23MP, processador Snapdragon 820 e sistema operacional Android.
+97;Google Pixel;649.99;5;Google;2016;O Google Pixel marcou o inicio da linha de smartphones Pixel da Google, com uma tela AMOLED de 5 polegadas, camera de 12,3MP, processador Snapdragon 821.
+98;Xiaomi Mi Mix;699.99;20;Xiaomi;2016;O Xiaomi Mi Mix foi um smartphone revolucionario com uma tela sem bordas de 6,4 polegadas, camera de 16MP, processador Snapdragon 821 e sistema operacional Android.
+99;Huawei P9;499.99;15;Huawei;2016;O Huawei P9 apresentou uma tela IPS-NEO LCD de 5,2 polegadas, camera dupla de 12MP, processador Kirin 955 e sistema operacional Android.
+100;Samsung Galaxy S8;799.99;30;Samsung;2017;O Samsung Galaxy S8 foi um smartphone premium com tela Super AMOLED de 5,8 polegadas, câmera de 12MP, processador Exynos 8895 e sistema operacional Android.
