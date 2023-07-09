@@ -1,77 +1,42 @@
 /*
-Como forma de facilitar o ensino dos métodos de ordenação, um professor resolveu fazer um programa que mostrasse o funcionamento do Selection Sort passo a passo. A ideia é que a cada comparação realizada pelo método, o vetor seja impresso destacando-se os elementos que estão sendo comparados e, quando ocorre uma troca, o vetor é exibido novamente mostrando os elementos que serão trocados. Para isso será necessário criar um programa que tenha:
+Mario é um grande fã de futebol e por isso decidiu realizar um torneio com times amadores de sua cidade, ficou decidido que todos os time jogariam entre si onde uma vitória daria 3 pontos empate 1 ponto e derrota 0 pontos, ao final do torneio o time vencedor seria aquele com maior número de pontos, caso houvesse empate seria escolhido o time com maior número de vitórias, persistindo o empate a escolha seria feita pelo time com maior saldo de gols (considere que não existirão times com saldo de gols iguais), Mario no entanto não ordenou a tabela do campeonato durante a competição e agora pede a você que crie um programa que a ordene e informe sua ordem correta.
 
-Um subprograma que exibe um vetor de inteiros com os elementos separados por tabulações. Além disso, ele deve receber por parâmetro as posições de dois elementos e um booleano indicando se eles serão trocados ou não. Se eles serão trocados deve ser impresso " t" logo após os dois elementos, caso contrário, deve ser impresso " *".
-Um subprograma com a implementação do Selection Sort (para vetor de inteiros), que utilize adequadamente o subprograma anterior. Obs: as chamadas devem ser feitas antes dos elementos serem trocados, mas já indicando se serão trocados ou não.
-No subprograma principal deve ser pedido ao usuário a quantidade de elementos e os elementos do vetor.
-Não deve haver nenhuma operação de escrita fora do subprograma de exibição do vetor.
-Dica: faça primeiro o exercício similar do Bubble Sort. Depois, implemente o Selection Sort e reutilize o subprograma de exibição feito no exercício anterior.
+Só é permitido usar um dos seguintes métodos: Insertion sort, Selection sort ou Shell sort.
 
 Entradas:
-Quantidade de números do vetor.
-Os números do vetor a ser ordenado.
+Quantidade de times que participaram da competição.
+vetor de registros representando os times contendo os campos de nome do time (cadeia de caracteres), pontos que o time fez no decorrer da competição (número inteiro), número de vitórias (número inteiro) e saldo de gols (número inteiro).
 
 Saídas:
-Os passos de ordenação do Selection Sort conforme o enunciado.
-Uma última exibição do vetor sem destacar elementos (mas ainda assim usando o mesmo subprograma).
+O programa deve ordenar o vetor dos times modo que o time com mais pontos apareça primeiro seguido do segundo com mais pontos e assim por diante, caso ocorra empate no número de pontos seu programa deve ordenar os times empatados pelo número de vitórias, se o empate ainda existir o programa deve ordenar pelo saldo de gols.
 
 Exemplo de Entrada:
-6
-4 8 2 9 5 0 
+5
+DesertorFC 9 3 10
+CarrascoFC 13 4 7
+Campinais 13 4 9
+Machado 11 3 10
+RealSport 1 0 -4
 
 Exemplo de Saída:
-4 *	8 *	2	9	5	0	
-4 *	8	2 *	9	5	0	
-4	8	2 *	9 *	5	0	
-4	8	2 *	9	5 *	0	
-4	8	2 *	9	5	0 *	
-4 t	8	2	9	5	0 t	
-0	8 *	2 *	9	5	4	
-0	8	2 *	9 *	5	4	
-0	8	2 *	9	5 *	4	
-0	8	2 *	9	5	4 *	
-0	8 t	2 t	9	5	4	
-0	2	8 *	9 *	5	4	
-0	2	8 *	9	5 *	4	
-0	2	8	9	5 *	4 *	
-0	2	8 t	9	5	4 t	
-0	2	4	9 *	5 *	8	
-0	2	4	9	5 *	8 *	
-0	2	4	9 t	5 t	8	
-0	2	4	5	9 *	8 *	
-0	2	4	5	9 t	8 t	
-0	2	4	5	8	9	
+Campinais 13 4 9
+CarrascoFC 13 4 7
+Machado 11 3 10
+DesertorFC 9 3 10
+RealSport 1 0 -4
 */
 #include <iostream>
 using namespace std;
 
-void exibeVetor(float vetor[], int n, int i, int j, bool troca)
+struct Times
 {
-  for (int k = 0; k < n; k++)
-  {
-    if (k == i || k == j)
-    {
-      cout << vetor[k];
-      if (troca)
-      {
-        cout << " t\t";
-      }
-      else
-      {
-        cout << " *\t";
-      }
-    }
-    else
-    {
-      cout << vetor[k] << "\t";
-    }
-  }
-  cout << endl;
-}
+  string nome;
+  int pontos;
+  int vitorias;
+  int gols;
+};
 
-//A ideia é que a cada comparação realizada pelo método, o vetor seja impresso destacando-se os elementos que estão sendo comparados e, quando ocorre uma troca, o vetor é exibido novamente mostrando os elementos que serão trocados.
-
-void selectionSort(float vetor[], int n)
+void selectionSort(Times vetor[], int n)
 {
   int i, j, min;
   for (i = 0; i < n - 1; i++)
@@ -80,23 +45,34 @@ void selectionSort(float vetor[], int n)
 
     for (j = i + 1; j < n; j++)
     {
-      exibeVetor(vetor, n, min, j, false);
-
-      if (vetor[j] < vetor[min])
+      if (vetor[j].pontos > vetor[min].pontos)
       {
         min = j;
       }
+      else if (vetor[j].pontos == vetor[min].pontos)
+      {
+        if (vetor[j].vitorias > vetor[min].vitorias)
+        {
+          min = j;
+        }
+        else if (vetor[j].vitorias == vetor[min].vitorias)
+        {
+          if (vetor[j].gols > vetor[min].gols)
+          {
+            min = j;
+          }
+        }
+      }
     }
-    if (i != min) // se i for diferente de min, então houve troca
-    {
-      exibeVetor(vetor, n, i, min, true);
-      int aux = vetor[i];
-      vetor[i] = vetor[min];
-      vetor[min] = aux;
-    }
+
+    Times aux = vetor[i];
+    vetor[i] = vetor[min];
+    vetor[min] = aux;
+
+    cout << vetor[i].nome << " " << vetor[i].pontos << " " << vetor[i].vitorias << " " << vetor[i].gols << endl;
   }
 
-  exibeVetor(vetor, n, -1, -1, false);
+  cout << vetor[n - 1].nome << " " << vetor[n - 1].pontos << " " << vetor[n - 1].vitorias << " " << vetor[n - 1].gols << endl;
 }
 
 int main()
@@ -104,13 +80,13 @@ int main()
   int n;
   cin >> n;
 
-  float vetor[n];
+  Times clubes[n];
   for (int i = 0; i < n; i++)
   {
-    cin >> vetor[i];
+    cin >> clubes[i].nome >> clubes[i].pontos >> clubes[i].vitorias >> clubes[i].gols;
   }
 
-  selectionSort(vetor, n);
+  selectionSort(clubes, n);
 
   return 0;
 }

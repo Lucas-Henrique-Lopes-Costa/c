@@ -45,32 +45,6 @@ Exemplo de Saída:
 #include <iostream>
 using namespace std;
 
-void exibeVetor(float vetor[], int n, int i, int j, bool troca)
-{
-  for (int k = 0; k < n; k++)
-  {
-    if (k == i || k == j)
-    {
-      cout << vetor[k];
-      if (troca)
-      {
-        cout << " t\t";
-      }
-      else
-      {
-        cout << " *\t";
-      }
-    }
-    else
-    {
-      cout << vetor[k] << "\t";
-    }
-  }
-  cout << endl;
-}
-
-//A ideia é que a cada comparação realizada pelo método, o vetor seja impresso destacando-se os elementos que estão sendo comparados e, quando ocorre uma troca, o vetor é exibido novamente mostrando os elementos que serão trocados.
-
 void selectionSort(float vetor[], int n)
 {
   int i, j, min;
