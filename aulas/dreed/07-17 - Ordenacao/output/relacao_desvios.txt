@@ -1,0 +1,7 @@
+Macaco_Louco		Partido_Da_Mentira		420000.0
+Joffrey_Baratheon 	Partido_Do_Furto		970000.0
+Hannibal_Lecter		Partido_Engana_Povo	        109000.0
+Darth_Vader		Partido_Do_Furto		973000.0
+Paola_Bracho		Partido_Engana_Povo	        896000.0
+Zeca_Urubu		Partido_Da_Mentira		234000.0
+Montgomery_Burns	Partido_Da_Mentira		556000.0
