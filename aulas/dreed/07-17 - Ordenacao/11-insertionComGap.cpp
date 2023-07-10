@@ -55,7 +55,6 @@ Exemplo de Saída:
 */
 
 #include <iostream>
-#include <fstream>
 using namespace std;
 
 void sheelSort(int n, int vetor[], int gap, int gaps[])
@@ -94,28 +93,7 @@ int main()
   int n;
   cin >> n;
 
-  int vetor[n];
-  for (int i = 0; i < n; i++)
-  {
-    cin >> vetor[i];
-  }
-
-  int gap = 1;
-
-  int gaps[gap];
-  for (int i = 0; i < gap; i++)
-  {
-    cin >> gaps[i];
-  }
-
-  sheelSort(n, vetor, gap, gaps);
-
-  for (int i = 0; i < n; i++)
-  {
-    cout << vetor[i] << " ";
-  }
-
-  cout << endl;
+  
 
   return 0;
 }
