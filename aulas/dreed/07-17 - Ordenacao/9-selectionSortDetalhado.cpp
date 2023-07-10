@@ -45,6 +45,35 @@ Exemplo de Saída:
 #include <iostream>
 using namespace std;
 
+void exibeVetor(float vetor[], int n, int i, int j, bool troca)
+{
+  for (int k = 0; k < n; k++)
+  {
+    cout << vetor[k];
+    if (k == i || k == j)
+    {
+      if (troca)
+      {
+        cout << " t";
+      }
+      else
+      {
+        cout << " *";
+      }
+    }
+    else if (k < n -1)
+    {
+      cout << "  ";
+    }
+
+    if(k < n - 1)
+    {
+      cout << "    ";
+    }
+  }
+  cout << endl;
+}
+
 void selectionSort(float vetor[], int n)
 {
   int i, j, min;
