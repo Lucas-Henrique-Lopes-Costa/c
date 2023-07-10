@@ -34,29 +34,6 @@ Exemplo de saída:
 #include <iostream>
 using namespace std;
 
-/*
-5
-4 1 7 2 3
-
-7 1 4 2 3
-7 4 1 2 3
-7 4 3 1 2
-7 4 3 2 1
-7 4 3 2 1
-
-4 3 7 2 1
-4 3 7 2 1
-4 7 3 2 1
-7 4 3 2 1
-7 4 3 2 1
-
-4 3 7 2 1
-4 3 7 2 1
-4 7 3 2 1
-4 7 3 2 1
-4 7 3 2 1
-*/
-
 void selectionSort(int vetor[], int n)
 {
   for (int i = n - 1; i >= 0; i--) // 1. Para cada índice válido do vetor (exceto o último):
