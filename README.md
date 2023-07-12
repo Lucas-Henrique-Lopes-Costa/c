@@ -401,13 +401,13 @@ A passagem de parâmetros é o mecanismo pelo qual os valores ou referências de
 
 ```
 int soma (int a, int b) {
-	return a+b;
+ return a+b;
 }
 int main(){
-	int a,b;
-	cin>>a>>b;
-	cout<<soma(a,b);
-	return 0;
+ int a,b;
+ cin>>a>>b;
+ cout<<soma(a,b);
+ return 0;
 }
 ```
 
@@ -494,3 +494,234 @@ int main() {
 
 </details>
 <br>
+
+# Registros e vetores de registros
+
+<details>
+<summary> 1. O que é um registro?</summary>
+
+Um registro é uma estrutura de dados que permite armazenar diferentes tipos de informações relacionadas em um único objeto. Ele pode ser visto como uma coleção de campos ou variáveis, onde cada campo contém um valor específico e possui um nome para identificá-lo.
+</details>
+
+<details>
+<summary> 2. Qual tipo de dado pode ser usado para a criação de um registro?</summary>
+Para a criação de um registro, é possível utilizar diferentes tipos de dados, como números inteiros, números de ponto flutuante, caracteres, strings, booleanos, entre outros. É importante escolher o tipo de dado mais adequado para cada campo do registro, dependendo das necessidades do sistema.
+</details>
+
+<details>
+<summary> 3. Qual(is) a(s) vantagem(ns) do uso de registros? De que outro modo os problemas poderiam ser resolvidos?</summary>
+As vantagens do uso de registros incluem:
+
+Organização e estruturação dos dados: registros permitem agrupar informações relacionadas em uma única estrutura, facilitando o acesso e a manipulação dos dados.
+Facilidade de leitura e compreensão: registros fornecem um formato claro e intuitivo para armazenar informações, o que facilita a compreensão do significado dos campos.
+Melhor eficiência em operações de busca e filtragem: registros podem ser utilizados para buscar ou filtrar informações com base em determinados critérios, o que pode ser mais eficiente do que percorrer uma lista de dados não estruturados.
+Os problemas também poderiam ser resolvidos de outras formas, como utilizando listas ou arrays separados para cada campo dos registros. No entanto, isso pode levar a uma estrutura mais complexa e dificultar a organização e manipulação dos dados.
+
+</details>
+
+<details>
+<summary> 4. Considere que você precisa armazenar os seguintes dados sobre filmes: Título, categoria, ano de lançamento, tempo de duração (em minutos). Como ficaria a definição de um registro para armazenar esses dados?</summary>
+A definição de um registro para armazenar os dados sobre filmes seria:
+
+```
+struct Filme {
+    char titulo[50];
+    char categoria[20];
+    int anoLancamento;
+    int duracaoMinutos;
+};
+```
+
+</details>
+
+<details>
+<summary>
+5. Considere os dados representados abaixo, faça:
+declare uma struct para representar os dados.
+declare um vetor para armazenar os dados e escreva um trecho de programa para preencher o vetor.
+um subprograma que retorna a posição do carro mais antigo.
+um subprograma que retorna o total de carros de uma cor que será informada pelo usuário. A cor a ser procurada deve ser um dos parâmetros do subprograma.
+um subprograma que retorna o total de carros que possuem ar condicionado e tem produção a partir do ano de 2010.
+
+0
+1
+2
+3
+4
+
+
+cor: preto
+ano: 2018
+marca: fiat
+ar: sim
+
+
+azul
+2010
+wolkswagen
+sim
+
+
+branco
+1990
+ford
+nao
+
+
+amarelo
+1985
+chevrolet
+nao
+
+
+
+preto
+2020
+mercedez
+sim
+
+</summary>
+
+Para representar os dados fornecidos, podemos utilizar a seguinte definição de struct:
+
+```
+struct Carro {
+    char cor[20];
+    int ano;
+    char marca[20];
+    char arCondicionado[4];
+};
+
+```
+
+</details>
+
+
+
+<details>
+<summary> 6. Para a representação gráfica dada a seguir, faça:
+Pessoa contém:
+nome
+cpf
+estado civil
+sexo
+endereço</summary>
+
+```
+struct Carro carros[5];
+
+carros[0].cor = "preto";
+carros[0].ano = 2018;
+carros[0].marca = "fiat";
+carros[0].arCondicionado = "sim";
+
+carros[1].cor = "azul";
+carros[1].ano = 2010;
+carros[1].marca = "volkswagen";
+carros[1].arCondicionado = "sim";
+
+carros[2].cor = "branco";
+carros[2].ano = 1990;
+carros[2].marca = "ford";
+carros[2].arCondicionado = "nao";
+
+carros[3].cor = "amarelo";
+carros[3].ano = 1985;
+carros[3].marca = "chevrolet";
+carros[3].arCondicionado = "nao";
+
+carros[4].cor = "preto";
+carros[4].ano = 2020;
+carros[4].marca = "mercedes";
+carros[4].arCondicionado = "sim";
+
+```
+
+</details>
+
+
+<details>
+<summary> 7. O Endereço é composto de:
+rua
+número
+bairro
+cep
+cidade
+
+a) defina a estrutura para representar Pessoa e Endereço.
+b) crie um vetor de Pessoa com capacidade para 5 elementos. Construa um trecho de código que permita leitura dos dados de entrada de um único elemento, mantendo o controle das posições ocupadas.
+c) crie um subprograma que retorna o total de pessoas que moram em uma cidade cujo o nome será informado pelo usuário.
+
+</summary>
+
+```
+    struct Pessoa {
+        char nome[50];
+        char cpf[12];
+        char estadoCivil[20];
+        char sexo[10];
+        struct Endereco endereco;
+    };
+
+    struct Endereco {
+        char rua[50];
+        int numero;
+        char bairro[30];
+        char cep[10];
+        char cidade[30];
+    };
+
+    struct Pessoa {
+        char nome[50];
+        char cpf[12];
+        char estadoCivil[20];
+        char sexo[10];
+        struct Endereco endereco;
+    };
+
+    struct Endereco {
+        char rua[50];
+        int numero;
+        char bairro[30];
+        char cep[10];
+        char cidade[30];
+    };
+
+    struct Pessoa pessoas[5];
+    int posicaoOcupada = 0;
+
+    if (posicaoOcupada < 5) {
+        printf("Digite o nome: ");
+        scanf("%s", pessoas[posicaoOcupada].nome);
+
+        printf("Digite o CPF: ");
+        scanf("%s", pessoas[posicaoOcupada].cpf);
+
+        printf("Digite o estado civil: ");
+        scanf("%s", pessoas[posicaoOcupada].estadoCivil);
+
+        printf("Digite o sexo: ");
+        scanf("%s", pessoas[posicaoOcupada].sexo);
+
+        printf("Digite a rua: ");
+        scanf("%s", pessoas[posicaoOcupada].endereco.rua);
+
+        printf("Digite o número: ");
+        scanf("%d", &pessoas[posicaoOcupada].endereco.numero);
+
+        printf("Digite o bairro: ");
+        scanf("%s", pessoas[posicaoOcupada].endereco.bairro);
+
+        printf("Digite o CEP: ");
+        scanf("%s", pessoas[posicaoOcupada].endereco.cep);
+
+        printf("Digite a cidade: ");
+        scanf("%s", pessoas[posicaoOcupada].endereco.cidade);
+
+        posicaoOcupada++;
+    } else {
+        printf("O vetor de Pessoa está cheio.\n");
+    }
+```
+
+</details>
