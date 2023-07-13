@@ -62,7 +62,7 @@ void mergesort(int a[], int inicio, int fim)
     intercala(a, inicio, meio + 1, fim);
   }
 
-   cout << "Depois (meio = " << (inicio + fim) / 2 << "): ";
+  cout << "Depois (meio = " << (inicio + fim) / 2 << "): ";
   for (int i = inicio; i <= fim; i++)
   {
     cout << a[i] << " ";
