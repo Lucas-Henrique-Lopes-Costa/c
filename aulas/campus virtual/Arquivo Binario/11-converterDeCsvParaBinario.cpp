@@ -18,12 +18,12 @@ using namespace std;
 struct Produto
 {
   int id;
-  char nome[50];
+  char nome[30];
   float preco;
   int quantidade;
-  char fabricante[20];
+  char fabricante[10];
   int anoCriacao;
-  char descricao[200];
+  char descricao[230];
 };
 
 int main()
