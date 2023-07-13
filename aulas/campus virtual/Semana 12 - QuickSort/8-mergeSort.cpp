@@ -36,19 +36,26 @@ void intercala(int v[], int p, int q, int r)
   {
     v[p + m] = w[m];
   }
+
+  cout << "Intercala: ";
+  for (int i = p; i <= r; i++)
+  {
+    cout << v[i] << " ";
+  }
+  cout << endl;
 }
 
 void mergesort(int a[], int inicio, int fim)
 {
   int meio;
 
-  cout << "Antes (meio = " << (inicio + fim) / 2 << "): ";
-  for (int i = inicio; i <= fim; i++)
-  {
-    cout << a[i] << " ";
-  }
+  // cout << "Antes (meio = " << (inicio + fim) / 2 << "): ";
+  // for (int i = inicio; i <= fim; i++)
+  // {
+  //   cout << a[i] << " ";
+  // }
 
-  cout << endl;
+  // cout << endl;
 
   if (inicio < fim)
   {
@@ -62,18 +69,18 @@ void mergesort(int a[], int inicio, int fim)
     intercala(a, inicio, meio + 1, fim);
   }
 
-  cout << "Depois (meio = " << (inicio + fim) / 2 << "): ";
-  for (int i = inicio; i <= fim; i++)
-  {
-    cout << a[i] << " ";
-  }
+  // cout << "Depois (meio = " << (inicio + fim) / 2 << "): ";
+  // for (int i = inicio; i <= fim; i++)
+  // {
+  //   cout << a[i] << " ";
+  // }
 
-  cout << endl;
+  // cout << endl;
 }
 
 int main()
 {
-  int a[] = {20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
+  int a[] = {24, 5, 9, -3, 0, 11, 32, 8, 68, 41, 14, 26, 3};
 
   // tamanho do vetor
   int n = sizeof(a) / sizeof(a[0]);

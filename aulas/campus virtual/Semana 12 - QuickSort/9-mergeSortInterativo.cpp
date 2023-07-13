@@ -66,7 +66,7 @@ void mergeiterativo(int v[], int tam)
 
 int main()
 {
-  int a[] = {20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
+  int a[] = {17, 31, 26, 99, 52, 44, 38, 29, 10, 1, 5, 2, 42};
 
   // tamanho do vetor
   int n = sizeof(a) / sizeof(a[0]);
