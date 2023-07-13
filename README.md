@@ -313,7 +313,7 @@ Uma matriz em C/C++ é uma estrutura de dados bidimensional que consiste em uma 
 <details>
 <summary>Como se declara uma matriz?</summary>
 
-Para declarar uma matriz em C/C++, você precisa especificar o tipo dos elementos da matriz e o tamanho das dimensões. A sintaxe geral é: tipo nome_da_matriz[linha][coluna];
+Para declarar uma matriz em C/C++, você precisa especificar o tipo dos elementos da matriz e o tamanho das dimensões. A sintaxe geral é: tipo ```nome_da_matriz[linha][coluna]```;
 
 </details>
 <br>
@@ -400,15 +400,15 @@ A passagem de parâmetros é o mecanismo pelo qual os valores ou referências de
 <summary>Utilizando o código abaixo, explique quais os passos que ocorrem quando um subprograma é chamado?</summary>
 
 ```
-int soma (int a, int b) {
- return a+b;
-}
-int main(){
- int a,b;
- cin>>a>>b;
- cout<<soma(a,b);
- return 0;
-}
+    int soma (int a, int b) {
+        return a+b;
+    }
+    int main(){
+    int a,b;
+    cin>>a>>b;
+    cout<<soma(a,b);
+    return 0;
+    }
 ```
 
 No código fornecido, os seguintes passos ocorrem quando o subprograma "soma" é chamado:
@@ -527,8 +527,8 @@ A definição de um registro para armazenar os dados sobre filmes seria:
 struct Filme {
     char titulo[50];
     char categoria[20];
-    int anoLancamento;
-    int duracaoMinutos;
+    int anoLançamento;
+    int duraçãoMinutos;
 };
 ```
 
@@ -558,7 +558,7 @@ ar: sim
 
 azul
 2010
-wolkswagen
+Volkswagen
 sim
 
 
@@ -570,14 +570,14 @@ nao
 
 amarelo
 1985
-chevrolet
+Chevrolet
 nao
 
 
 
 preto
 2020
-mercedez
+Mercedes
 sim
 
 </summary>
@@ -617,7 +617,7 @@ carros[0].arCondicionado = "sim";
 
 carros[1].cor = "azul";
 carros[1].ano = 2010;
-carros[1].marca = "volkswagen";
+carros[1].marca = "Volkswagen";
 carros[1].arCondicionado = "sim";
 
 carros[2].cor = "branco";
@@ -627,12 +627,12 @@ carros[2].arCondicionado = "nao";
 
 carros[3].cor = "amarelo";
 carros[3].ano = 1985;
-carros[3].marca = "chevrolet";
+carros[3].marca = "Chevrolet";
 carros[3].arCondicionado = "nao";
 
 carros[4].cor = "preto";
 carros[4].ano = 2020;
-carros[4].marca = "mercedes";
+carros[4].marca = "Mercedes";
 carros[4].arCondicionado = "sim";
 
 ```
@@ -660,10 +660,10 @@ c) crie um subprograma que retorna o total de pessoas que moram em uma cidade cu
         char cpf[12];
         char estadoCivil[20];
         char sexo[10];
-        struct Endereco endereco;
+        struct Endereço endereço;
     };
 
-    struct Endereco {
+    struct Endereço {
         char rua[50];
         int numero;
         char bairro[30];
@@ -676,10 +676,10 @@ c) crie um subprograma que retorna o total de pessoas que moram em uma cidade cu
         char cpf[12];
         char estadoCivil[20];
         char sexo[10];
-        struct Endereco endereco;
+        struct Endereço endereço;
     };
 
-    struct Endereco {
+    struct Endereço {
         char rua[50];
         int numero;
         char bairro[30];
@@ -688,37 +688,37 @@ c) crie um subprograma que retorna o total de pessoas que moram em uma cidade cu
     };
 
     struct Pessoa pessoas[5];
-    int posicaoOcupada = 0;
+    int posiçãoOcupada = 0;
 
-    if (posicaoOcupada < 5) {
+    if (posiçãoOcupada < 5) {
         printf("Digite o nome: ");
-        scanf("%s", pessoas[posicaoOcupada].nome);
+        scanf("%s", pessoas[posiçãoOcupada].nome);
 
         printf("Digite o CPF: ");
-        scanf("%s", pessoas[posicaoOcupada].cpf);
+        scanf("%s", pessoas[posiçãoOcupada].cpf);
 
         printf("Digite o estado civil: ");
-        scanf("%s", pessoas[posicaoOcupada].estadoCivil);
+        scanf("%s", pessoas[posiçãoOcupada].estadoCivil);
 
         printf("Digite o sexo: ");
-        scanf("%s", pessoas[posicaoOcupada].sexo);
+        scanf("%s", pessoas[posiçãoOcupada].sexo);
 
         printf("Digite a rua: ");
-        scanf("%s", pessoas[posicaoOcupada].endereco.rua);
+        scanf("%s", pessoas[posiçãoOcupada].endereço.rua);
 
         printf("Digite o número: ");
-        scanf("%d", &pessoas[posicaoOcupada].endereco.numero);
+        scanf("%d", &pessoas[posiçãoOcupada].endereço.numero);
 
         printf("Digite o bairro: ");
-        scanf("%s", pessoas[posicaoOcupada].endereco.bairro);
+        scanf("%s", pessoas[posiçãoOcupada].endereço.bairro);
 
         printf("Digite o CEP: ");
-        scanf("%s", pessoas[posicaoOcupada].endereco.cep);
+        scanf("%s", pessoas[posiçãoOcupada].endereço.cep);
 
         printf("Digite a cidade: ");
-        scanf("%s", pessoas[posicaoOcupada].endereco.cidade);
+        scanf("%s", pessoas[posiçãoOcupada].endereço.cidade);
 
-        posicaoOcupada++;
+        posiçãoOcupada++;
     } else {
         printf("O vetor de Pessoa está cheio.\n");
     }
