@@ -4,9 +4,6 @@ using namespace std;
 void insertion_sort(int vetor[], int tam)
 {
   int valor_pivo, j; // variaveis auxiliares
-
-  int contComparacoes = 0;
-
   for (int i = 1; i < tam; i++) // percorre o vetor a partir do segundo elemento
   {
     valor_pivo = vetor[i]; // valor que será comparado
