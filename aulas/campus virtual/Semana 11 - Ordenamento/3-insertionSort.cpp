@@ -18,28 +18,6 @@ void insertion_sort(int vetor[], int tam)
   }
 }
 
-// EXEMPLO DE EXECUÇÃO
-// vetor = [5, 4, 3, 2, 1]
-
-// i = 1
-// valor_pivo = 4
-// j = 0
-// vetor = [5, 5, 3, 2, 1]
-// j = -1
-
-// vetor = [4, 5, 3, 2, 1]
-
-// i = 2
-// valor_pivo = 3
-// j = 1
-// vetor = [4, 5, 5, 2, 1]
-// j = 0
-// vetor = [4, 4, 5, 2, 1]
-// j = -1
-// vetor = [3, 4, 5, 2, 1]
-
-// Aqui ele vai decrementando o j até que o valor_pivo seja maior que o vetor[j], depois ele insere o valor_pivo na posição j + 1
-
 int main()
 {
   int tamanho = 5;
@@ -52,9 +30,7 @@ int main()
   while (numero > 0)
   {
     vetor[index] = numero;
-
     index++;
-
     cin >> numero;
   }
 

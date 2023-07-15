@@ -2,124 +2,189 @@
 #include <fstream>
 #include <sstream>
 #include <cstring>
+
 using namespace std;
+
+const int MAX_CADASTROS = 100;
 
 struct Funcionario
 {
-	long long CPF;
-	char nome[100];
-	int diaNascimento;
-	int mesNascimento;
-	int anoNascimento;
-	char cargo[100];
-	float salario;
-	long long telefone;
-	char endereco[100];
+    long long CPF;
+    char nome[40];
+    int diaNascimento;
+    int mesNascimento;
+    int anoNascimento;
+    char cargo[15];
+    float salario;
+    long long telefone;
+    char endereco[90];
 };
+
+void lerArquivoBinario(const string& nomeArquivo)
+{
+    ifstream arquivo(nomeArquivo, ios::binary);
+    if (!arquivo)
+    {
+        cout << "Erro ao abrir o arquivo binário." << endl;
+        return;
+    }
+
+    Funcionario funcionarios[MAX_CADASTROS];
+    int numCadastros = 0;
+
+    while (numCadastros < MAX_CADASTROS && arquivo.read((char*)&funcionarios[numCadastros], sizeof(Funcionario)))
+    {
+        numCadastros++;
+    }
+
+    arquivo.close();
+
+    for (int i = 0; i < numCadastros; i++)
+    {
+        cout << "CPF: " << funcionarios[i].CPF << endl;
+        cout << "Nome: " << funcionarios[i].nome << endl;
+        cout << "Data de Nascimento: " << funcionarios[i].diaNascimento << "/" << funcionarios[i].mesNascimento << "/" << funcionarios[i].anoNascimento << endl;
+        cout << "Cargo: " << funcionarios[i].cargo << endl;
+        cout << "Salário: R$" << funcionarios[i].salario << endl;
+        cout << "Telefone: " << funcionarios[i].telefone << endl;
+        cout << "Endereço: " << funcionarios[i].endereco << endl;
+        cout << endl;
+    }
+}
+
+void importarCSVparaBinario(const string& nomeArquivoCSV, const string& nomeArquivoBinario)
+{
+    ifstream arquivoCSV(nomeArquivoCSV);
+    if (!arquivoCSV)
+    {
+        cout << "Erro ao abrir o arquivo CSV." << endl;
+        return;
+    }
+
+    ofstream arquivoBinario(nomeArquivoBinario, ios::binary);
+    if (!arquivoBinario)
+    {
+        cout << "Erro ao criar o arquivo binário." << endl;
+        arquivoCSV.close();
+        return;
+    }
+
+    Funcionario funcionarios[MAX_CADASTROS];
+    int numCadastros = 0;
+
+    string linha;
+    getline(arquivoCSV, linha); // Descarta a primeira linha do arquivo
+
+    while (numCadastros < MAX_CADASTROS && getline(arquivoCSV, linha))
+    {
+        istringstream iss(linha);
+        string dado;
+        int i = 0;
+
+        while (getline(iss, dado, ';'))
+        {
+            switch (i)
+            {
+                case 0:
+                    funcionarios[numCadastros].CPF = stoll(dado);
+                    break;
+                case 1:
+                    strncpy(funcionarios[numCadastros].nome, dado.c_str(), sizeof(funcionarios[numCadastros].nome));
+                    break;
+                case 2:
+                    funcionarios[numCadastros].diaNascimento = stoi(dado);
+                    break;
+                case 3:
+                    funcionarios[numCadastros].mesNascimento = stoi(dado);
+                    break;
+                case 4:
+                    funcionarios[numCadastros].anoNascimento = stoi(dado);
+                    break;
+                case 5:
+                    strncpy(funcionarios[numCadastros].cargo, dado.c_str(), sizeof(funcionarios[numCadastros].cargo));
+                    break;
+                case 6:
+                    funcionarios[numCadastros].salario = stof(dado);
+                    break;
+                case 7:
+                    funcionarios[numCadastros].telefone = stoll(dado);
+                    break;
+                case 8:
+                    strncpy(funcionarios[numCadastros].endereco, dado.c_str(), sizeof(funcionarios[numCadastros].endereco));
+                    break;
+                default:
+                    break;
+            }
+
+            i++;
+        }
+
+        arquivoBinario.write(reinterpret_cast<const char*>(&funcionarios[numCadastros]), sizeof(Funcionario));
+
+        numCadastros++;
+    }
+
+    arquivoCSV.close();
+    arquivoBinario.close();
+}
+
+void exportarBinarioparaCSV(const string& nomeArquivoBinario, const string& nomeArquivoCSV)
+{
+    ifstream arquivoBinario(nomeArquivoBinario, ios::binary);
+    if (!arquivoBinario)
+    {
+        cout << "Erro ao abrir o arquivo binário." << endl;
+        return;
+    }
+
+    ofstream arquivoCSV(nomeArquivoCSV);
+    if (!arquivoCSV)
+    {
+        cout << "Erro ao criar o arquivo CSV." << endl;
+        arquivoBinario.close();
+        return;
+    }
+
+    Funcionario funcionarios[MAX_CADASTROS];
+    int numCadastros = 0;
+
+    while (numCadastros < MAX_CADASTROS && arquivoBinario.read((char*)&funcionarios[numCadastros], sizeof(Funcionario)))
+    {
+        numCadastros++;
+    }
+
+    arquivoBinario.close();
+
+    for (int i = 0; i < numCadastros; i++)
+    {
+        arquivoCSV << funcionarios[i].CPF << ';'
+                   << funcionarios[i].nome << ';'
+                   << funcionarios[i].diaNascimento << ';'
+                   << funcionarios[i].mesNascimento << ';'
+                   << funcionarios[i].anoNascimento << ';'
+                   << funcionarios[i].cargo << ';'
+                   << funcionarios[i].salario << ';'
+                   << funcionarios[i].telefone << ';'
+                   << funcionarios[i].endereco << '\n';
+    }
+
+    arquivoCSV.close();
+}
 
 int main()
 {
-	Funcionario *funcionario = new Funcionario[100];
+    string arquivoCSV = "funcionarios.csv";
+    string arquivoBinario = "funcionarios.bin";
 
-	ifstream ler("funcionarios.csv");
+    // Importar do CSV para o binário
+    importarCSVparaBinario(arquivoCSV, arquivoBinario);
 
-	if (ler.is_open())
-	{
-		string linha;
-		int i = 0;
+    // Ler o arquivo binário
+    lerArquivoBinario(arquivoBinario);
 
-		while (getline(ler, linha) && i < 100)
-		{
-			size_t pos = 0;
-			size_t delimPos;
+    // Exportar do binário para o CSV
+    string novoArquivoCSV = "funcionarios_exportados.csv";
+    exportarBinarioparaCSV(arquivoBinario, novoArquivoCSV);
 
-			delimPos = linha.find(';', pos);
-			funcionario[i].CPF = stoll(linha.substr(pos, delimPos - pos));
-			pos = delimPos + 1;
-
-			delimPos = linha.find(';', pos);
-			strncpy(funcionario[i].nome, linha.substr(pos, delimPos - pos).c_str(), sizeof(funcionario[i].nome));
-			pos = delimPos + 1;
-
-			delimPos = linha.find(';', pos);
-			funcionario[i].diaNascimento = stoi(linha.substr(pos, delimPos - pos));
-			pos = delimPos + 1;
-
-			delimPos = linha.find(';', pos);
-			funcionario[i].mesNascimento = stoi(linha.substr(pos, delimPos - pos));
-			pos = delimPos + 1;
-
-			delimPos = linha.find(';', pos);
-			funcionario[i].anoNascimento = stoi(linha.substr(pos, delimPos - pos));
-			pos = delimPos + 1;
-
-			delimPos = linha.find(';', pos);
-			strncpy(funcionario[i].cargo, linha.substr(pos, delimPos - pos).c_str(), sizeof(funcionario[i].cargo));
-			pos = delimPos + 1;
-
-			delimPos = linha.find(';', pos);
-			funcionario[i].salario = stof(linha.substr(pos, delimPos - pos));
-			pos = delimPos + 1;
-
-			delimPos = linha.find(';', pos);
-			funcionario[i].telefone = stoll(linha.substr(pos, delimPos - pos));
-			pos = delimPos + 1;
-
-			delimPos = linha.find('\n', pos);
-			strncpy(funcionario[i].endereco, linha.substr(pos).c_str(), sizeof(funcionario[i].endereco));
-
-			i++;
-		}
-
-		ler.close();
-	}
-	else
-	{
-		cout << "Não foi possível ler o arquivo" << endl;
-		return 1;
-	}
-
-	ofstream saida("funcionarios.bin", ios::binary | ios::out);
-	if (saida.is_open())
-	{
-		saida.write(reinterpret_cast<const char *>(funcionario), sizeof(Funcionario) * 100);
-		saida.close();
-	}
-	else
-	{
-		cout << "Erro ao escrever no arquivo" << endl;
-		return 1;
-	}
-
-	delete[] funcionario;
-
-	// Leitura e impressão do arquivo binário
-	ifstream arquivoBinario("funcionarios.bin", ios::binary);
-	if (arquivoBinario.is_open())
-	{
-		Funcionario *funcionarioLido = new Funcionario[100];
-		arquivoBinario.read(reinterpret_cast<char *>(funcionarioLido), sizeof(Funcionario) * 100);
-		arquivoBinario.close();
-
-		for (int i = 0; i < 100; i++)
-		{
-			cout << "CPF: " << funcionarioLido[i].CPF << endl;
-			cout << "Nome: " << funcionarioLido[i].nome << endl;
-			cout << "Data de Nascimento: " << funcionarioLido[i].diaNascimento << "/" << funcionarioLido[i].mesNascimento << "/" << funcionarioLido[i].anoNascimento << endl;
-			cout << "Cargo: " << funcionarioLido[i].cargo << endl;
-			cout << "Salario: " << funcionarioLido[i].salario << endl;
-			cout << "Telefone: " << funcionarioLido[i].telefone << endl;
-			cout << "Endereco: " << funcionarioLido[i].endereco << endl;
-			cout << endl;
-		}
-
-		delete[] funcionarioLido;
-	}
-	else
-	{
-		cout << "Erro ao abrir o arquivo binário" << endl;
-		return 1;
-	}
-
-	return 0;
+    return 0;
 }

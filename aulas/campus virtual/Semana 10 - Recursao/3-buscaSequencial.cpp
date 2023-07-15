@@ -14,6 +14,7 @@ int main()
 
   cin >> K;
   i = 0;
+  
   while (i < N) // olhe a melhorada
   {
     if (V[i] == K)
