@@ -46,10 +46,97 @@ Exemplo de Saída:
 #include <iostream>
 using namespace std;
 
+struct Produto
+{
+  int id;
+  string descricao;
+  float preco;
+};
+
+void intercala(Produto *produtos, int inicio, int meio, int fim)
+{
+  int i = inicio;
+  int j = meio + 1;
+  int k = 0;
+  Produto *aux = new Produto[fim - inicio + 1];
+
+  while (i <= meio && j <= fim)
+  {
+    if (produtos[i].preco < produtos[j].preco)
+    {
+      aux[k] = produtos[i];
+      i++;
+    }
+    else
+    {
+      aux[k] = produtos[j];
+      j++;
+    }
+    k++;
+  }
+
+  while (i <= meio)
+  {
+    aux[k] = produtos[i];
+    i++;
+    k++;
+  }
+
+  while (j <= fim)
+  {
+    aux[k] = produtos[j];
+    j++;
+    k++;
+  }
+
+  for (int i = inicio; i <= fim; i++)
+  {
+    produtos[i] = aux[i - inicio];
+  }
+
+  delete[] aux;
+}
+
+void mergeSort(Produto *produtos, int inicio, int fim)
+{
+  if (inicio < fim)
+  {
+    int meio = (inicio + fim) / 2;
+    mergeSort(produtos, inicio, meio);
+    mergeSort(produtos, meio + 1, fim);
+    intercala(produtos, inicio, meio, fim);
+  }
+}
 
 int main()
 {
-  
+  int n;
+  cin >> n;
+
+  Produto *produtos = new Produto[n];
+
+  for (int i = 0; i < n; i++)
+  {
+    cin >> produtos[i].id;
+    cin.ignore();
+    getline(cin, produtos[i].descricao);
+    cin >> produtos[i].preco;
+  }
+
+  float min, max;
+  cin >> min >> max;
+
+  // Ordenando os produtos
+  mergeSort(produtos, 0, n - 1);
+
+  // Imprimindo os produtos
+  for (int i = 0; i < n; i++)
+  {
+    if (produtos[i].preco >= min && produtos[i].preco <= max)
+    {
+      cout << produtos[i].id << " \"" << produtos[i].descricao << "\" " << produtos[i].preco << endl;
+    }
+  }
   
   return 0;
 }

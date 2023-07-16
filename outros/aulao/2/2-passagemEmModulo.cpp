@@ -17,8 +17,8 @@ void adicionarPessoas(Pessoa *&pessoas, int &tamanho)
   }
 
   delete[] pessoas;
-  pessoas = aux;
-  tamanho += 1;
+  pessoas = aux; // transfere o endereço dos vetores
+  tamanho++;
 }
 
 int main()
