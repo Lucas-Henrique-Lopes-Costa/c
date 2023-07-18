@@ -55,6 +55,11 @@ int main()
 {
   // Tem que ler de um arquivo
   ifstream arquivoIn("entrada.txt");
+  if (!arquivoIn.is_open())
+  {
+    cout << "Erro ao abrir o arquivo" << endl;
+    return 0;
+  }
 
   times *vetor = new times[5];
 
