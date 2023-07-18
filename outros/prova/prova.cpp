@@ -64,7 +64,6 @@ int main()
   while (arquivoIn >> vetor[i].numero >> vetor[i].nome >> vetor[i].gols)
   {
     i++;
-
     if (i >= 5)
     {
       // armazenar em um vetor dinamico de registro
