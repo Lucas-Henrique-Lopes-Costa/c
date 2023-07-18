@@ -12,21 +12,21 @@ struct times
 // Ordernar o vetor de acordo com algum campo
 void ordenacao(times vetor[], int tamanho)
 {
-  int i, j, min;
+  int menor;
   times aux;
 
-  for (i = 0; i < tamanho - 1; i++)
+  for (int i = 0; i < tamanho; i++)
   {
-    min = i;
-    for (j = i + 1; j < tamanho; j++)
+    menor = i;
+    for (int j = i + 1; j < tamanho; j++)
     {
-      if (vetor[j].numero < vetor[min].numero)
+      if (vetor[j].numero < vetor[menor].numero)
       {
-        min = j;
+        menor = j;
       }
     }
 
-    swap(vetor[i], vetor[min]);
+    swap(vetor[i], vetor[menor]);
   }
 }
 
