@@ -69,10 +69,7 @@ int main()
     {
       // armazenar em um vetor dinamico de registro
       times *aux = new times[i + 1];
-      for (int j = 0; j < i; j++)
-      {
-        aux[j] = vetor[j];
-      }
+      copy(&vetor[0], &vetor[i], aux);
 
       delete[] vetor;
       vetor = aux;
