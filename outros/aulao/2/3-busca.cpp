@@ -11,7 +11,7 @@ int buscaSequencial(int *V, int N, int K)
 
   if (i == N)
   {
-    i = -1;
+    return -1;
   }
 
   return i;
@@ -22,7 +22,6 @@ int main()
   int K, N = 10;
   int V[N];
 
-  int posicao = -1;
   for (int i = 0; i < N; i++)
   {
     cin >> V[i];

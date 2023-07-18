@@ -3,26 +3,22 @@ using namespace std;
 
 void selection_sort(int vetor[], int tam) // pede o vetor e o tamanho do vetor
 {
-	int menor, aux_troca, comparacoes = 0;
+	int menor, aux_troca;
 	for (int indice = 0; indice < tam - 1; indice++) // percorre o vetor até o penúltimo elemento
 	{
 		menor = indice; // tenta encontrar o menor elemento do que esse atual
 		for (int j = indice + 1; j < tam; j++)
 		{
-			comparacoes++;
 			if (vetor[j] < vetor[menor]) // se o elemento atual for menor que o menor encontrado
 			{
 				menor = j; // atualiza o menor
 			}
-		}
+		} 
 		// fazendo a troca
 		aux_troca = vetor[indice];
 		vetor[indice] = vetor[menor];
 		vetor[menor] = aux_troca;
-
 	}
-	
-	cout << comparacoes << endl;
 }
 
 // EXEMPLOS

@@ -16,6 +16,8 @@ void adicionarPessoas(Pessoa *&pessoas, int &tamanho)
     aux[i] = pessoas[i];
   }
 
+  // copy(&pessoas[0], &pessoas[tamanho], aux);
+
   delete[] pessoas;
   pessoas = aux; // transfere o endereço dos vetores
   tamanho++;

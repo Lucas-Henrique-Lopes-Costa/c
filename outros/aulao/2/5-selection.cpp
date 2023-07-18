@@ -18,6 +18,8 @@ void selection(int vetor[], int tam)
     int aux = vetor[i];
     vetor[i] = vetor[menor];
     vetor[menor] = aux;
+
+    swap(vetor[i], vetor[menor]);
   }
 
 }

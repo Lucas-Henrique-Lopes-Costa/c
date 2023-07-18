@@ -1,0 +1,6 @@
+1 mexico 4
+3 alemanha 2
+2 porto_rico 1
+4 inglaterra 2
+5 argentina 5
+6 italia 2
