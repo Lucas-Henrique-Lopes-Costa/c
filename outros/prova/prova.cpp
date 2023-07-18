@@ -13,8 +13,6 @@ struct times
 void ordenacao(times vetor[], int tamanho)
 {
   int menor;
-  times aux;
-
   for (int i = 0; i < tamanho; i++)
   {
     menor = i;
