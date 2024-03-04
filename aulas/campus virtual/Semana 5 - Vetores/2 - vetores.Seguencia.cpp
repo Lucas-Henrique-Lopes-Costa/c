@@ -9,12 +9,12 @@ int main()
    float vetor[num];
    float soma = 0;
 
-   for (i = 0; i < num; i++)
+   for (int i = 0; i < num; i++)
    {
       cin >> vetor[i];  // leitura dos dados
       soma += vetor[i]; // somatório dos elementos
    }
-   for (i = 0; i < num; i++)
+   for (int i = 0; i < num; i++)
    {
       cout << vetor[i] << " "; // impressão dos dados
    }
