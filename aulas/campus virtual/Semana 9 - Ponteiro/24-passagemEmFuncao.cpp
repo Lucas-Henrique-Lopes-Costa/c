@@ -32,14 +32,14 @@ void adicionarPessoas(Pessoa *&pessoas, int &tamanho)
   // de onde vem, até onde vai, para onde vai3
 
   // forma com memccpy - boa também
-  // memccpy(pessoas, aux, tamanho, sizeof(Pessoa));
+  memccpy(pessoas, aux, tamanho, sizeof(Pessoa));
   // de onde vem, para onde vai, tamanho, tamanho de cada elemento
 
   // forma com for - não recomendada por ser menos eficiente
-  // for (int i = 0; i < tamanho; i++)
-  // {
-  //   aux[i] = pessoas[i];
-  // }
+  for (int i = 0; i < tamanho; i++)
+  {
+    aux[i] = pessoas[i];
+  }
 
   delete[] pessoas;
   pessoas = aux;
